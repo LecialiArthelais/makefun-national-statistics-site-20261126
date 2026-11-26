@@ -118,6 +118,7 @@ h1 {
 
 /* ---------- controls ---------- */
 .seg { display: inline-flex; gap: 4px; background: #F0F0EC; border: 1px solid var(--border); border-radius: 999px; padding: 3px; }
+.seg.wrap { flex-wrap: wrap; border-radius: 14px; }
 .seg button {
   border: 0; background: transparent; font: inherit; font-size: 13px; font-weight: 700;
   color: var(--muted); padding: 6px 14px; border-radius: 999px; cursor: pointer; white-space: nowrap;
@@ -215,7 +216,62 @@ footer p { margin: 0 0 8px; font-size: 13.5px; color: var(--muted); max-width: 7
 footer p:last-child { margin-bottom: 0; }
 footer a { color: var(--ink); font-weight: 700; }
 
+/* ---------- almanak cover (index) ---------- */
+.dateline {
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  padding: 12px 0 10px; border-bottom: 1px solid var(--border);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
+}
+.dateline b { color: var(--accent); }
+.rule-double { border-top: 3px solid var(--ink); border-bottom: 1px solid var(--ink); height: 5px; margin: 14px 0 0; }
+.hero.almanak { padding-top: 26px; }
+.hero.almanak h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 52px; letter-spacing: -0.02em; }
+.kpi .k-src { font-size: 11px; color: var(--muted); margin: 8px 0 0; border-top: 1px solid var(--border); padding-top: 7px; }
+.kpi .k-spark { margin-top: 8px; }
+.kpi .k-spark svg { width: 100%; height: auto; }
+
+/* ---------- calculator ---------- */
+.calc-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: end; margin: 4px 0 12px; }
+.calc-field { display: flex; flex-direction: column; gap: 5px; }
+.calc-field label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.calc-field input[type="number"], .calc-field select, .compare-sel select {
+  font: inherit; font-size: 15px; padding: 9px 12px; border-radius: 10px;
+  border: 1px solid var(--border); background: var(--surface); color: var(--ink);
+}
+.calc-field input[type="number"]:focus, .calc-field select:focus, .compare-sel select:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+.calc-result {
+  background: var(--accent-soft); border: 1px solid #F3C2CB; border-radius: var(--radius);
+  padding: 16px 18px; margin: 4px 0 10px;
+}
+.calc-result .cr-big { font-size: 30px; font-weight: 800; letter-spacing: -0.02em; color: var(--accent); font-variant-numeric: tabular-nums; }
+.calc-result .cr-line { font-size: 14px; color: var(--ink); margin: 4px 0 0; }
+.calc-result .cr-note { font-size: 12.5px; color: var(--muted); margin: 6px 0 0; }
+.calc-formula { font-size: 13px; color: var(--muted); margin: 0 0 4px; font-variant-numeric: tabular-nums; }
+.calc-formula b { color: var(--ink); }
+
+/* ---------- regions explorer ---------- */
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.compare-sel { display: flex; gap: 10px; flex-wrap: wrap; align-items: end; margin: 4px 0 12px; }
+.compare-sel .calc-field { flex: 1; min-width: 180px; }
+.delta-up { color: var(--accent); font-weight: 700; }
+.delta-down { color: var(--muted); font-weight: 700; }
+.rank-list { list-style: none; margin: 0; padding: 0; counter-reset: rank; }
+.rank-list li { display: flex; align-items: baseline; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14.5px; }
+.rank-list li:last-child { border-bottom: 0; }
+.rank-list .rk { font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; min-width: 22px; }
+.rank-list .rv { margin-left: auto; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tilemap-card svg { width: 100%; height: auto; }
+
 /* ---------- responsive ---------- */
+@media (max-width: 1399px) {
+  /* The seventh nav item (Regions) pushes the header past its 1120px box
+     on 1280/1366px viewports (horizontal scroll + clipped pill): hide the
+     "Data as of" pill — the cover dateline says the same — and tighten the
+     nav so the header fits again. */
+  .topbar-right .pill.hide-phone { display: none; }
+  .topbar-inner { gap: 12px; }
+  .nav a { padding: 7px 9px; }
+}
 @media (max-width: 1023px) {
   .kpis { grid-template-columns: repeat(3, 1fr); }
   .minis { grid-template-columns: repeat(2, 1fr); }
@@ -223,8 +279,10 @@ footer a { color: var(--ink); font-weight: 700; }
 }
 @media (max-width: 760px) {
   .grid-2 { grid-template-columns: 1fr; }
+  .compare-grid { grid-template-columns: 1fr; }
   .donut-wrap { flex-direction: column; align-items: flex-start; gap: 8px; }
   .donut-svg { width: 210px; height: 210px; }
+  .hero.almanak h1 { font-size: 36px; }
 }
 @media (max-width: 639px) {
   .wrap { padding: 0 16px; }

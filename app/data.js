@@ -66,14 +66,83 @@ var INDATA = {
       { name: 'Bali & Nusa Tenggara', millions: 15.95, share: 5.60 },
       { name: 'Maluku & Papua (residual, derived)', millions: 9.18, share: 3.23 }
     ] },
-  provinces: { label: 'Largest provinces by population, 2026', unit: 'millions', source: 'BPS, Statistik Indonesia 2026 (population projections)',
+  provinces: { label: 'Provinces of Indonesia, 38', unit: 'people', source: 'Population: BPS, mid-year estimates 2025. HDI 2024: BPS (IPM 2024; provincial values as revised in the Nov 2025 release). Poverty Sep 2024: BPS, BRS. GRP per capita 2024: BPS (Seri 2010). See audit-log.md for the full verification trail.',
     rows: [
-      { name: 'West Java', value: 51.16 },
-      { name: 'East Java', value: 42.35 },
-      { name: 'Central Java', value: 38.57 },
-      { name: 'North Sumatra', value: 15.98 },
-      { name: 'Banten', value: 12.64 }
+      { name: 'West Java', island: 'Java', capital: 'Bandung', pop: 50759000, hdi: 74.92, poverty: 7.08, gdppc: 59865 },
+      { name: 'East Java', island: 'Java', capital: 'Surabaya', pop: 42089300, hdi: 75.35, poverty: 9.56, gdppc: 80856 },
+      { name: 'Central Java', island: 'Java', capital: 'Semarang', pop: 38233900, hdi: 73.87, poverty: 9.58, gdppc: 50824 },
+      { name: 'North Sumatra', island: 'Sumatra', capital: 'Medan', pop: 15785800, hdi: 75.76, poverty: 7.19, gdppc: 78310 },
+      { name: 'Banten', island: 'Java', capital: 'Serang', pop: 12537400, hdi: 76.35, poverty: 5.70, gdppc: 74673 },
+      { name: 'Jakarta', island: 'Java', capital: 'Jakarta', pop: 10678000, hdi: 84.15, poverty: 4.14, gdppc: 367687 },
+      { name: 'South Sulawesi', island: 'Sulawesi', capital: 'Makassar', pop: 9563100, hdi: 75.18, poverty: 7.77, gdppc: 78748 },
+      { name: 'Lampung', island: 'Sumatra', capital: 'Bandar Lampung', pop: 9522900, hdi: 73.13, poverty: 10.62, gdppc: 55009 },
+      { name: 'South Sumatra', island: 'Sumatra', capital: 'Palembang', pop: 8928500, hdi: 73.84, poverty: 10.51, gdppc: 80663 },
+      { name: 'Riau', island: 'Sumatra', capital: 'Pekanbaru', pop: 6811200, hdi: 75.67, poverty: 6.36, gdppc: 176385 },
+      { name: 'West Sumatra', island: 'Sumatra', capital: 'Padang', pop: 5914300, hdi: 76.43, poverty: 5.42, gdppc: 59549 },
+      { name: 'West Kalimantan', island: 'Kalimantan', capital: 'Pontianak', pop: 5766000, hdi: 71.19, poverty: 6.25, gdppc: 56984 },
+      { name: 'East Nusa Tenggara', island: 'Bali & Nusa Tenggara', capital: 'Kupang', pop: 5742600, hdi: 69.14, poverty: 19.02, gdppc: 25837 },
+      { name: 'West Nusa Tenggara', island: 'Bali & Nusa Tenggara', capital: 'Mataram', pop: 5731100, hdi: 73.10, poverty: 11.91, gdppc: 33667 },
+      { name: 'Aceh', island: 'Sumatra', capital: 'Banda Aceh', pop: 5626000, hdi: 75.36, poverty: 12.64, gdppc: 45770 },
+      { name: 'Bali', island: 'Bali & Nusa Tenggara', capital: 'Denpasar', pop: 4461300, hdi: 78.63, poverty: 3.80, gdppc: 72658 },
+      { name: 'South Kalimantan', island: 'Kalimantan', capital: 'Banjarbaru', pop: 4323300, hdi: 75.19, poverty: 4.02, gdppc: 70577 },
+      { name: 'East Kalimantan', island: 'Kalimantan', capital: 'Samarinda', pop: 4267600, hdi: 78.79, poverty: 5.51, gdppc: 208331 },
+      { name: 'Yogyakarta', island: 'Java', capital: 'Yogyakarta', pop: 3781500, hdi: 81.62, poverty: 10.40, gdppc: 55039 },
+      { name: 'Jambi', island: 'Sumatra', capital: 'Jambi', pop: 3768500, hdi: 74.36, poverty: 7.26, gdppc: 92786 },
+      { name: 'Central Sulawesi', island: 'Sulawesi', capital: 'Palu', pop: 3156100, hdi: 72.24, poverty: 11.04, gdppc: 131643 },
+      { name: 'Central Kalimantan', island: 'Kalimantan', capital: 'Palangka Raya', pop: 2845000, hdi: 74.28, poverty: 5.26, gdppc: 84730 },
+      { name: 'Southeast Sulawesi', island: 'Sulawesi', capital: 'Kendari', pop: 2836700, hdi: 73.62, poverty: 10.63, gdppc: 72031 },
+      { name: 'North Sulawesi', island: 'Sulawesi', capital: 'Manado', pop: 2721400, hdi: 75.68, poverty: 6.70, gdppc: 75235 },
+      { name: 'Riau Islands', island: 'Sumatra', capital: 'Tanjung Pinang', pop: 2213500, hdi: 79.89, poverty: 4.78, gdppc: 172459 },
+      { name: 'Bengkulu', island: 'Sumatra', capital: 'Bengkulu', pop: 2138000, hdi: 74.91, poverty: 12.52, gdppc: 52305 },
+      { name: 'Maluku', island: 'Maluku & Papua', capital: 'Ambon', pop: 1970600, hdi: 73.40, poverty: 15.78, gdppc: 33652 },
+      { name: 'Bangka Belitung', island: 'Sumatra', capital: 'Pangkal Pinang', pop: 1550800, hdi: 74.55, poverty: 5.08, gdppc: 75323 },
+      { name: 'West Sulawesi', island: 'Sulawesi', capital: 'Mamuju', pop: 1525300, hdi: 70.46, poverty: 10.71, gdppc: 46654 },
+      { name: 'Central Papua', island: 'Maluku & Papua', capital: 'Nabire', pop: 1492300, hdi: 60.25, poverty: 27.60, gdppc: 107566 },
+      { name: 'Highland Papua', island: 'Maluku & Papua', capital: 'Wamena', pop: 1484900, hdi: 54.43, poverty: 29.66, gdppc: 19111 },
+      { name: 'North Maluku', island: 'Maluku & Papua', capital: 'Sofifi', pop: 1373800, hdi: 71.84, poverty: 6.03, gdppc: 97262 },
+      { name: 'Gorontalo', island: 'Sulawesi', capital: 'Gorontalo', pop: 1242200, hdi: 72.01, poverty: 13.87, gdppc: 47477 },
+      { name: 'Papua', island: 'Maluku & Papua', capital: 'Jayapura', pop: 1073600, hdi: 73.83, poverty: 18.09, gdppc: 84305 },
+      { name: 'North Kalimantan', island: 'Kalimantan', capital: 'Tanjung Selor', pop: 749400, hdi: 73.41, poverty: 5.38, gdppc: 208210 },
+      { name: 'Southwest Papua', island: 'Maluku & Papua', capital: 'Sorong', pop: 636400, hdi: 69.65, poverty: 16.95, gdppc: 61624 },
+      { name: 'West Papua', island: 'Maluku & Papua', capital: 'Manokwari', pop: 587600, hdi: 67.69, poverty: 21.09, gdppc: 139213 },
+      { name: 'South Papua', island: 'Maluku & Papua', capital: 'Merauke', pop: 549700, hdi: 68.86, poverty: 19.35, gdppc: 64928 }
     ] },
+  /* Population pyramid, UN World Population Prospects 2024 (medium variant,
+     1 July 2024). Totals match the published figures exactly: 283,487,931
+     people (male 142,407,916; female 141,080,015), median age 30.1. The
+     45–49 band is DERIVED as the residual of the published sex totals (its
+     source record was truncated in the UN data feed); all other bands are
+     published values. Bands 80+ are grouped here; the split is in the note:
+     80–84: 725,436 / 1,242,430; 85–89: 273,464 / 539,079; 90–94: 58,814 /
+     139,798; 95–99: 6,662 / 18,905; 100+: 318 / 1,135 (male / female). */
+  pyramid: { label: 'Population by age and sex, 2024', unit: 'people', source: 'UN World Population Prospects 2024 (medium variant, 1 July 2024)',
+    total: 283487931, male: 142407916, female: 141080015, medianAge: 30.1,
+    bands: [
+      { label: '0–4', male: 11414146, female: 10808560 },
+      { label: '5–9', male: 11855424, female: 11251375 },
+      { label: '10–14', male: 12517801, female: 11884481 },
+      { label: '15–19', male: 11968518, female: 11368416 },
+      { label: '20–24', male: 11239481, female: 10690743 },
+      { label: '25–29', male: 11273310, female: 10760395 },
+      { label: '30–34', male: 10796007, female: 10304847 },
+      { label: '35–39', male: 10601582, female: 10168733 },
+      { label: '40–44', male: 10534164, female: 10219386 },
+      { label: '45–49', male: 9610645, female: 9488309, derived: true },
+      { label: '50–54', male: 8591960, female: 8652190 },
+      { label: '55–59', male: 7331465, female: 7582241 },
+      { label: '60–64', male: 5734472, female: 6176970 },
+      { label: '65–69', male: 4036060, female: 4642214 },
+      { label: '70–74', male: 2453421, female: 3091895 },
+      { label: '75–79', male: 1384766, female: 2047913 },
+      { label: '80+', male: 1064694, female: 1941347 }
+    ] },
+  /* CPI index, DERIVED by compounding the published annual CPI inflation
+     rates (World Bank WDI, FP.CPI.TOTL.ZG): 2015 = 100, then each year
+     multiplied by (1 + that year's inflation). Used only by the inflation
+     calculator; the index itself is labelled derived wherever it appears. */
+  cpiIndex: { label: 'Consumer price index (derived)', unit: 'index, 2015 = 100', source: 'Derived from annual CPI inflation rates, World Bank WDI (FP.CPI.TOTL.ZG)',
+    years: [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+    values: [100.00, 103.53, 107.47, 110.91, 114.27, 116.47, 118.29, 123.27, 127.79, 130.57] },
   exports: { label: 'Top exports, 2024', unit: '$ billion', source: 'BPS / customs data',
     rows: [
       { name: 'Mineral fuels & oils', value: 55.52, share: 21.0, note: 'incl. coal $34.59B, petroleum gas $8.77B, lignite $8.25B' },
@@ -134,6 +203,16 @@ var INDATA = {
     { topic: 'Trade', name: 'Largest export market (China)', value: '$68.0 billion (22.5%)', year: 2024, source: 'Customs data' },
     { topic: 'Trade', name: 'Top export: mineral fuels & oils', value: '$55.52 billion (21.0%)', year: 2024, source: 'BPS / customs data' },
     { topic: 'Trade', name: 'Top export: fats & oils (incl. palm oil)', value: '$26.82 billion (10.1%)', year: 2024, source: 'BPS / customs data' },
-    { topic: 'Trade', name: 'Top export: iron & steel', value: '$25.80 billion (9.8%)', year: 2024, source: 'BPS / customs data' }
+    { topic: 'Trade', name: 'Top export: iron & steel', value: '$25.80 billion (9.8%)', year: 2024, source: 'BPS / customs data' },
+    { topic: 'Trade', name: 'Trade balance', value: '$31.04 billion surplus', year: 2024, source: 'BPS, BRS (exports $264.70bn, imports $233.66bn)' },
+    { topic: 'Economy', name: 'GDP, PPP', value: '$4.67 trillion', year: 2024, source: 'World Bank WDI (NY.GDP.MKTP.PP.CD)' },
+    { topic: 'Economy', name: 'Imports of goods & services', value: '20.5% of GDP', year: 2024, source: 'World Bank WDI (NE.IMP.GNFS.ZS)' },
+    { topic: 'Economy', name: 'Inflation (CPI, BPS)', value: '1.57% (December, year on year)', year: 2024, source: 'BPS' },
+    { topic: 'Society', name: 'Poverty rate', value: '8.57%', year: 2024, source: 'BPS, BRS No. 07/01/Th. XXVIII (September 2024)' },
+    { topic: 'Society', name: 'Human Development Index (IPM)', value: '75.02', year: 2024, source: 'BPS (released 15 Nov 2024)' },
+    { topic: 'Education', name: 'Tertiary enrolment (gross)', value: '44.9%', year: 2023, source: 'World Bank WDI (SE.TER.ENRR)' },
+    { topic: 'Health', name: 'Maternal mortality', value: '140 per 100,000 live births', year: 2023, source: 'World Bank WDI (SH.STA.MMRT)' },
+    { topic: 'Population', name: 'Mobile cellular subscriptions', value: '122.5 per 100 people', year: 2024, source: 'World Bank WDI (IT.CEL.SETS.P2)' },
+    { topic: 'Population', name: 'Fixed broadband subscriptions', value: '4.92 per 100 people', year: 2024, source: 'World Bank WDI (IT.NET.BBND.P2)' }
   ]
 };

@@ -39,3 +39,13 @@ Trade,Largest export market (China),$68.0 billion (22.5%),2024,Customs data
 Trade,Top export: mineral fuels & oils,$55.52 billion (21.0%),2024,BPS / customs data
 Trade,Top export: fats & oils (incl. palm oil),$26.82 billion (10.1%),2024,BPS / customs data
 Trade,Top export: iron & steel,$25.80 billion (9.8%),2024,BPS / customs data
+Trade,Trade balance,$31.04 billion surplus,2024,"BPS, BRS (exports $264.70bn, imports $233.66bn)"
+Economy,"GDP, PPP",$4.67 trillion,2024,World Bank WDI (NY.GDP.MKTP.PP.CD)
+Economy,Imports of goods & services,20.5% of GDP,2024,World Bank WDI (NE.IMP.GNFS.ZS)
+Economy,"Inflation (CPI, BPS)","1.57% (December, year on year)",2024,BPS
+Society,Poverty rate,8.57%,2024,"BPS, BRS No. 07/01/Th. XXVIII (September 2024)"
+Society,Human Development Index (IPM),75.02,2024,BPS (released 15 Nov 2024)
+Education,Tertiary enrolment (gross),44.9%,2023,World Bank WDI (SE.TER.ENRR)
+Health,Maternal mortality,"140 per 100,000 live births",2023,World Bank WDI (SH.STA.MMRT)
+Population,Mobile cellular subscriptions,122.5 per 100 people,2024,World Bank WDI (IT.CEL.SETS.P2)
+Population,Fixed broadband subscriptions,4.92 per 100 people,2024,World Bank WDI (IT.NET.BBND.P2)

@@ -21,6 +21,7 @@
       <a href="index.html">Overview</a>
       <a href="economy.html">Economy</a>
       <a href="people.html">People &amp; Regions</a>
+      <a href="regions.html">Regions</a>
       <a href="society.html" class="active" aria-current="page">Society</a>
       <a href="environment.html">Environment</a>
       <a href="data.html">Data &amp; Sources</a>
@@ -40,12 +41,21 @@
   </section>
 
   <section class="kpis" aria-label="Society indicators">
-    <div class="kpi"><p class="k-label">Life expectancy</p><p class="k-value">71.3<small> yrs</small></p><p class="k-sub">Male 69.2 · Female 73.4</p></div>
-    <div class="kpi"><p class="k-label">Adult literacy</p><p class="k-value">96.0<small>%</small></p><p class="k-sub">Age 15+, 2020</p></div>
-    <div class="kpi"><p class="k-label">Primary enrolment</p><p class="k-value">100.0<small>%</small></p><p class="k-sub">Gross, 2024</p></div>
-    <div class="kpi"><p class="k-label">Secondary enrolment</p><p class="k-value">98.8<small>%</small></p><p class="k-sub">Gross, 2024</p></div>
-    <div class="kpi"><p class="k-label">Health spending</p><p class="k-value">2.7<small>%</small></p><p class="k-sub">Of GDP, 2023</p></div>
-    <div class="kpi"><p class="k-label">Infant mortality</p><p class="k-value">17.7</p><p class="k-sub">Per 1,000 live births</p></div>
+    <div class="kpi"><p class="k-label">Life expectancy</p><p class="k-value">71.3<small> yrs</small></p><p class="k-sub">Male 69.2 · Female 73.4</p><p class="k-src">World Bank WDI (SP.DYN.LE00.IN) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Adult literacy</p><p class="k-value">96.0<small>%</small></p><p class="k-sub">Age 15+, 2020</p><p class="k-src">World Bank WDI (SE.ADT.LITR.ZS) · 2020</p></div>
+    <div class="kpi"><p class="k-label">Primary enrolment</p><p class="k-value">100.0<small>%</small></p><p class="k-sub">Gross, 2024</p><p class="k-src">World Bank WDI (SE.PRM.ENRR) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Secondary enrolment</p><p class="k-value">98.8<small>%</small></p><p class="k-sub">Gross, 2024</p><p class="k-src">World Bank WDI (SE.SEC.ENRR) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Health spending</p><p class="k-value">2.7<small>%</small></p><p class="k-sub">Of GDP, 2023</p><p class="k-src">World Bank WDI (SH.XPD.CHEX.GD.ZS) · 2023</p></div>
+    <div class="kpi"><p class="k-label">Infant mortality</p><p class="k-value">17.7</p><p class="k-sub">Per 1,000 live births</p><p class="k-src">World Bank WDI (SH.DYN.MORT) · 2024</p></div>
+  </section>
+
+  <section class="kpis" aria-label="More society indicators">
+    <div class="kpi"><p class="k-label">Poverty rate</p><p class="k-value">8.57<small>%</small></p><p class="k-sub">Sep 2024 · 24.06m people</p><p class="k-src">BPS, BRS No. 07/01/Th. XXVIII · 2024</p></div>
+    <div class="kpi"><p class="k-label">Human Development Index</p><p class="k-value">75.02</p><p class="k-sub">Up 0.63 points on 2023</p><p class="k-src">BPS (IPM) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Tertiary enrolment</p><p class="k-value">44.9<small>%</small></p><p class="k-sub">Gross, 2023</p><p class="k-src">World Bank WDI (SE.TER.ENRR) · 2023</p></div>
+    <div class="kpi"><p class="k-label">Maternal mortality</p><p class="k-value">140</p><p class="k-sub">Per 100,000 live births</p><p class="k-src">World Bank WDI (SH.STA.MMRT) · 2023</p></div>
+    <div class="kpi"><p class="k-label">Mobile subscriptions</p><p class="k-value">122.5<small>/100</small></p><p class="k-sub">Per 100 people</p><p class="k-src">World Bank WDI (IT.CEL.SETS.P2) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Fixed broadband</p><p class="k-value">4.92<small>/100</small></p><p class="k-sub">Per 100 people</p><p class="k-src">World Bank WDI (IT.NET.BBND.P2) · 2024</p></div>
   </section>
 
   <section class="section">
@@ -117,6 +127,7 @@ window.addEventListener('DOMContentLoaded', function () {
   }));
   CH.render('chart-health', CH.barChart({
     labels: D.healthSpending.years, values: D.healthSpending.values, decimals: 2, highlightIndex: 6,
+    ymax: 4, ticks: [0, 1, 2, 3, 4], tickDecimals: 0,
     aria: 'Bar chart: health spending 2015 to 2023, peaking at 3.71 percent of GDP in 2021',
     annotate: [{ index: 6, text: 'Peak: 3.71%' }]
   }));
@@ -124,7 +135,7 @@ window.addEventListener('DOMContentLoaded', function () {
     categories: D.enrolment.years.map(function (y) { return String(y); }),
     series1: { name: 'Primary', values: D.enrolment.primary },
     series2: { name: 'Secondary', values: D.enrolment.secondary },
-    decimals: 1,
+    decimals: 1, ymax: 120, ticks: [0, 50, 100], tickDecimals: 0,
     aria: 'Grouped bars: gross enrolment 2015 versus 2024 — primary 108.0 to 100.0 percent, secondary 87.8 to 98.8'
   }));
 });

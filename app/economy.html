@@ -21,6 +21,7 @@
       <a href="index.html">Overview</a>
       <a href="economy.html" class="active" aria-current="page">Economy</a>
       <a href="people.html">People &amp; Regions</a>
+      <a href="regions.html">Regions</a>
       <a href="society.html">Society</a>
       <a href="environment.html">Environment</a>
       <a href="data.html">Data &amp; Sources</a>
@@ -40,12 +41,21 @@
   </section>
 
   <section class="kpis" aria-label="Economy indicators">
-    <div class="kpi"><p class="k-label">GDP</p><p class="k-value">$1.40<small> tn</small></p><p class="k-sub">16th largest in the world</p></div>
-    <div class="kpi"><p class="k-label">GDP per capita</p><p class="k-value">$4,925</p><p class="k-sub"><b>$16,472</b> PPP</p></div>
-    <div class="kpi"><p class="k-label">Real growth</p><p class="k-value">5.03<small>%</small></p><p class="k-sub">2024, after 5.05% in 2023</p></div>
-    <div class="kpi"><p class="k-label">Inflation (CPI)</p><p class="k-value">2.18<small>%</small></p><p class="k-sub">Down from 3.67% in 2023</p></div>
-    <div class="kpi"><p class="k-label">Goods exports</p><p class="k-value">$264.7<small> bn</small></p><p class="k-sub">22.3% of GDP incl. services</p></div>
-    <div class="kpi"><p class="k-label">Rupiah / USD</p><p class="k-value">15,855</p><p class="k-sub">Annual average, 2024</p></div>
+    <div class="kpi"><p class="k-label">GDP</p><p class="k-value">$1.40<small> tn</small></p><p class="k-sub">16th largest in the world</p><p class="k-src">World Bank WDI (NY.GDP.MKTP.CD) · 2024</p></div>
+    <div class="kpi"><p class="k-label">GDP per capita</p><p class="k-value">$4,925</p><p class="k-sub"><b>$16,472</b> PPP</p><p class="k-src">World Bank WDI (NY.GDP.PCAP.CD) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Real growth</p><p class="k-value">5.03<small>%</small></p><p class="k-sub">2024, after 5.05% in 2023</p><p class="k-src">World Bank WDI (NY.GDP.MKTP.KD.ZG) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Inflation (CPI)</p><p class="k-value">2.18<small>%</small></p><p class="k-sub">Down from 3.67% in 2023</p><p class="k-src">World Bank WDI (FP.CPI.TOTL.ZG) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Goods exports</p><p class="k-value">$264.7<small> bn</small></p><p class="k-sub">22.3% of GDP incl. services</p><p class="k-src">BPS / customs data · 2024</p></div>
+    <div class="kpi"><p class="k-label">Rupiah / USD</p><p class="k-value">15,855</p><p class="k-sub">Annual average, 2024</p><p class="k-src">World Bank WDI (PA.NUS.FCRF) · 2024</p></div>
+  </section>
+
+  <section class="kpis" aria-label="More economy indicators">
+    <div class="kpi"><p class="k-label">GDP, PPP</p><p class="k-value">$4.67<small> tn</small></p><p class="k-sub">Purchasing-power parity</p><p class="k-src">World Bank WDI (NY.GDP.MKTP.PP.CD) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Imports</p><p class="k-value">20.5<small>%</small></p><p class="k-sub">Of GDP, goods &amp; services</p><p class="k-src">World Bank WDI (NE.IMP.GNFS.ZS) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Trade surplus</p><p class="k-value">$31.04<small> bn</small></p><p class="k-sub">5th straight surplus year</p><p class="k-src">BPS, BRS · 2024</p></div>
+    <div class="kpi"><p class="k-label">Inflation (BPS)</p><p class="k-value">1.57<small>%</small></p><p class="k-sub">December, year on year</p><p class="k-src">BPS · Dec 2024</p></div>
+    <div class="kpi"><p class="k-label">Unemployment (BPS)</p><p class="k-value">4.91<small>%</small></p><p class="k-sub">Open unemployment, Aug 2024</p><p class="k-src">BPS (TPT) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Exports, goods &amp; services</p><p class="k-value">22.3<small>%</small></p><p class="k-sub">Of GDP</p><p class="k-src">World Bank WDI (NE.EXP.GNFS.ZS) · 2024</p></div>
   </section>
 
   <section class="section">
@@ -74,6 +84,37 @@
         <div class="chart" id="chart-exports"></div>
         <p class="source"><b>Source:</b> BPS / customs data. Total goods exports $264.7 billion.</p>
       </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card wide">
+      <h3>Rupiah inflation calculator</h3>
+      <p class="card-sub">What was your money worth? Enter an amount and a year — the calculator converts it to 2024 rupiah using the consumer price index, 2015–2024.</p>
+      <div class="calc-row">
+        <div class="calc-field">
+          <label for="calc-amount">Amount (Rp)</label>
+          <input type="number" id="calc-amount" value="1000000" min="0" step="1000" inputmode="numeric">
+        </div>
+        <div class="calc-field">
+          <label for="calc-year">From year</label>
+          <select id="calc-year"></select>
+        </div>
+        <div class="calc-field">
+          <label for="calc-direction">Direction</label>
+          <select id="calc-direction">
+            <option value="to2024">That year → 2024</option>
+            <option value="from2024">2024 → that year</option>
+          </select>
+        </div>
+      </div>
+      <div class="calc-result" aria-live="polite">
+        <p class="cr-big" id="calc-out">Rp1,305,700</p>
+        <p class="cr-line" id="calc-line">Rp1,000,000 in 2015 buys what Rp1,305,700 buys in 2024.</p>
+        <p class="cr-note" id="calc-note">Cumulative inflation 2015–2024: +30.6%.</p>
+      </div>
+      <p class="calc-formula" id="calc-formula">Formula: Rp1,000,000 × (130.57 ÷ 100.00) = Rp1,305,700 — the CPI index rose from 100.00 in 2015 to 130.57 in 2024.</p>
+      <p class="source"><b>Method:</b> the CPI index is <b>derived</b> by compounding the published annual CPI inflation rates (World Bank WDI, FP.CPI.TOTL.ZG), with 2015 = 100: 100.00, 103.53, 107.47, 110.91, 114.27, 116.47, 118.29, 123.27, 127.79, 130.57 (2015–2024). No price level is invented — only the official yearly rates are compounded. The World Bank annual rate for 2024 is 2.18%; BPS&rsquo;s December year-on-year figure is 1.57%.</p>
     </div>
   </section>
 
@@ -122,6 +163,7 @@ window.addEventListener('DOMContentLoaded', function () {
     CH.render('chart-growth', CH.barChart({
       labels: labels, values: values, decimals: 2,
       highlightIndex: hi >= 0 ? hi : -1,
+      ymin: -2.5, ymax: 6, ticks: [-2, 0, 2, 4, 6], tickDecimals: 0,
       aria: 'Bar chart: real GDP growth, ' + labels[0] + ' to ' + labels[labels.length - 1],
       annotate: hi >= 0 ? [{ index: hi, text: 'COVID-19: −2.07%' }] : []
     }));
@@ -144,6 +186,51 @@ window.addEventListener('DOMContentLoaded', function () {
     decimals: 2, unitSuffix: 'B', labelWidth: 210,
     aria: 'Horizontal bars: top exports 2024 — mineral fuels 55.52 billion dollars, fats and oils 26.82, iron and steel 25.80'
   }));
+
+  /* Inflation calculator (P0-5): converts an amount between any year
+     2015–2024 and 2024 using the derived CPI index in data.js. */
+  var cpi = D.cpiIndex;
+  var yearSel = document.getElementById('calc-year');
+  cpi.years.slice(0, -1).forEach(function (y) {
+    var opt = document.createElement('option');
+    opt.value = y; opt.textContent = y;
+    yearSel.appendChild(opt);
+  });
+  yearSel.value = '2015';
+  var amountInput = document.getElementById('calc-amount');
+  var dirSel = document.getElementById('calc-direction');
+  function idr(n) {
+    return 'Rp' + Math.round(n).toLocaleString('en-US');
+  }
+  function calc() {
+    var amount = parseFloat(amountInput.value);
+    if (isNaN(amount) || amount < 0) amount = 0;
+    var y = parseInt(yearSel.value, 10);
+    var yi = cpi.years.indexOf(y), i24 = cpi.years.indexOf(2024);
+    var from = cpi.values[yi], to = cpi.values[i24];
+    var out, line, note, formula;
+    if (dirSel.value === 'to2024') {
+      out = amount * to / from;
+      line = idr(amount) + ' in ' + y + ' buys what ' + idr(out) + ' buys in 2024.';
+      note = 'Cumulative inflation ' + y + '–2024: +' + ((to / from - 1) * 100).toFixed(1) + '%.';
+      formula = 'Formula: ' + idr(amount) + ' × (' + to.toFixed(2) + ' ÷ ' + from.toFixed(2) + ') = ' + idr(out) +
+        ' — the CPI index rose from ' + from.toFixed(2) + ' in ' + y + ' to ' + to.toFixed(2) + ' in 2024.';
+    } else {
+      out = amount * from / to;
+      line = idr(amount) + ' in 2024 buys what ' + idr(out) + ' bought in ' + y + '.';
+      note = 'Prices in ' + y + ' were ' + ((1 - from / to) * 100).toFixed(1) + '% lower than in 2024.';
+      formula = 'Formula: ' + idr(amount) + ' × (' + from.toFixed(2) + ' ÷ ' + to.toFixed(2) + ') = ' + idr(out) +
+        ' — the CPI index was ' + from.toFixed(2) + ' in ' + y + ' against ' + to.toFixed(2) + ' in 2024.';
+    }
+    document.getElementById('calc-out').textContent = idr(out);
+    document.getElementById('calc-line').textContent = line;
+    document.getElementById('calc-note').textContent = note;
+    document.getElementById('calc-formula').textContent = formula;
+  }
+  amountInput.addEventListener('input', calc);
+  yearSel.addEventListener('change', calc);
+  dirSel.addEventListener('change', calc);
+  calc();
 });
 </script>
 </body>
