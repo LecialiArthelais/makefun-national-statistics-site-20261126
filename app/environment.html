@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Environment — Indonesia in Numbers</title>
+<meta name="description" content="Indonesia's environment: forest cover, CO2 emissions, energy mix and tourism.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<script src="data.js" defer></script>
+<script src="charts.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">ID</span><span class="brand-name">Indonesia <span>in Numbers</span></span></a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
+      <svg viewBox="0 0 20 20" fill="none" stroke="#111110" stroke-width="2" stroke-linecap="round"><line x1="3" y1="5" x2="17" y2="5"/><line x1="3" y1="10" x2="17" y2="10"/><line x1="3" y1="15" x2="17" y2="15"/></svg>
+    </button>
+    <nav class="nav" id="main-nav" aria-label="Sections">
+      <a href="index.html">Overview</a>
+      <a href="economy.html">Economy</a>
+      <a href="people.html">People &amp; Regions</a>
+      <a href="society.html">Society</a>
+      <a href="environment.html" class="active" aria-current="page">Environment</a>
+      <a href="data.html">Data &amp; Sources</a>
+    </nav>
+    <div class="topbar-right">
+      <span class="pill red"><span class="dot"></span>Latest: 2024</span>
+      <span class="pill hide-phone">Data as of Nov 2026</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="page-head">
+    <p class="eyebrow">Environment &amp; Energy · <b>2024</b></p>
+    <h1>Half forest, mostly coal, turning slowly</h1>
+    <p>Forest still covers 50.7% of the land. CO2 per person is 2.87 tonnes — low for a G20 economy. But coal is 40.37% of primary energy, and renewables are 14.65%.</p>
+  </section>
+
+  <section class="kpis" aria-label="Environment indicators">
+    <div class="kpi"><p class="k-label">Forest area</p><p class="k-value">50.7<small>%</small></p><p class="k-sub">Of land area, 2024</p></div>
+    <div class="kpi"><p class="k-label">CO2 per capita</p><p class="k-value">2.87<small> t</small></p><p class="k-sub">812.2 Mt total, 2024</p></div>
+    <div class="kpi"><p class="k-label">Renewables</p><p class="k-value">14.65<small>%</small></p><p class="k-sub">Of primary energy</p></div>
+    <div class="kpi"><p class="k-label">Coal share</p><p class="k-value">40.37<small>%</small></p><p class="k-sub">Of primary energy</p></div>
+    <div class="kpi"><p class="k-label">Tourist arrivals</p><p class="k-value">13.90<small> m</small></p><p class="k-sub"><b>+19.05%</b> on 2023</p></div>
+    <div class="kpi"><p class="k-label">Gini index</p><p class="k-value">34.9</p><p class="k-sub">2024 · see Society</p></div>
+  </section>
+
+  <section class="section">
+    <div class="grid-2">
+      <div class="card">
+        <h3>Forest cover is holding steady</h3>
+        <p class="card-sub">Forest area, % of land area. The two verified endpoints — 50.61% in 2015 and 50.67% in 2024 — show a series that is essentially flat at about half the country.</p>
+        <div class="chart" id="chart-forest"></div>
+        <p class="source"><b>Source:</b> World Bank WDI (AG.LND.FRST.ZS). Only the endpoints are plotted — no intermediate years are invented.</p>
+      </div>
+      <div class="card">
+        <h3>Energy still runs on coal</h3>
+        <p class="card-sub">Primary energy mix, % of primary energy, 2024. Coal and oil together are nearly 70%; new and renewable energy is 14.65%.</p>
+        <div class="chart" id="chart-energy"></div>
+        <p class="source"><b>Source:</b> Ministry of Energy &amp; Mineral Resources (ESDM), 2024.</p>
+      </div>
+      <div class="card">
+        <h3>Emissions per person, 2022–2024</h3>
+        <p class="card-sub">CO2 emissions per capita, tonnes. 2.72, then 2.71, then 2.87 — the 2024 rise follows the post-pandemic recovery in energy use.</p>
+        <div class="chart" id="chart-co2"></div>
+        <p class="source"><b>Source:</b> World Bank WDI (EN.ATM.CO2E.PC). The direct API call for this indicator errored in November 2026; values are from WDI mirrors and exclude land use. Total 2024 emissions: 812.2 Mt.</p>
+      </div>
+      <div class="card">
+        <h3>Tourism is back</h3>
+        <p class="card-sub">Foreign tourist arrivals, 2024. 13.90 million visitors, up 19.05% on the year — the recovery from the pandemic collapse continues.</p>
+        <ul class="facts">
+          <li><span class="f-k">Arrivals, 2024</span><span class="f-v">13.90 million</span></li>
+          <li><span class="f-k">Growth on 2023</span><span class="f-v">+19.05%</span></li>
+          <li><span class="f-k">Top origin: Malaysia</span><span class="f-v">2.28 million</span></li>
+          <li><span class="f-k">Australia</span><span class="f-v">1.6 million</span></li>
+          <li><span class="f-k">Singapore</span><span class="f-v">1.4 million</span></li>
+        </ul>
+        <p class="source"><b>Source:</b> BPS, Berita Resmi Statistik No. 11/02/Th. XXVIII, 3 Feb 2025.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="grid-2">
+      <div class="card prose">
+        <h3>Reading the environment</h3>
+        <p><b>The forest is the asset.</b> At 50.7% of land area, Indonesia is one of the world&rsquo;s most forested large countries — and the share has barely moved in a decade. Keeping it flat is itself the achievement, given the pressure from palm oil, mining and settlement.</p>
+        <p><b>Emissions are low per person, high in total.</b> 2.87 tonnes per capita is modest beside the G20 average, but 283.5 million people add up to 812.2 million tonnes. The energy mix explains why: coal at 40.37% is the single largest source, and it is also the country&rsquo;s biggest export.</p>
+        <p><b>The transition has started, slowly.</b> New and renewable energy reached 14.65% of primary energy in 2024. The direction is set; the pace is the open question — and the one this page will track year by year.</p>
+      </div>
+      <div class="card">
+        <h3>Environment at a glance</h3>
+        <ul class="facts">
+          <li><span class="f-k">Forest area</span><span class="f-v">50.7% of land (2024)</span></li>
+          <li><span class="f-k">CO2 per capita</span><span class="f-v">2.87 t (2024)</span></li>
+          <li><span class="f-k">CO2 total</span><span class="f-v">812.2 Mt (2024)</span></li>
+          <li><span class="f-k">Coal</span><span class="f-v">40.37% of energy</span></li>
+          <li><span class="f-k">Oil</span><span class="f-v">28.82% of energy</span></li>
+          <li><span class="f-k">Natural gas</span><span class="f-v">16.17% of energy</span></li>
+          <li><span class="f-k">New &amp; renewable</span><span class="f-v">14.65% of energy</span></li>
+        </ul>
+        <p class="source"><b>Sources:</b> World Bank WDI; Ministry of Energy &amp; Mineral Resources (ESDM), 2024.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Figures are from the World Bank World Development Indicators, BPS — Statistics Indonesia, UNDP and the CIA World Factbook. Each figure shows its own reference year; years differ by indicator.</p>
+    <p>Indonesia in Numbers is an independent statistics site. It is not affiliated with BPS, the World Bank or UNDP. <a href="data.html">See all data &amp; sources &rarr;</a></p>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('DOMContentLoaded', function () {
+  CH.initMenu();
+  var D = INDATA;
+  CH.render('chart-forest', CH.lineChart({
+    labels: D.forestEndpoints.years.map(function (y) { return String(y); }),
+    values: D.forestEndpoints.values, decimals: 2, unitSuffix: '%',
+    ymin: 50, ymax: 51.2,
+    aria: 'Line chart: forest area was 50.61 percent of land in 2015 and 50.67 in 2024 — essentially flat',
+    annotate: [{ index: 1, text: 'Stable at ~51%' }]
+  }));
+  CH.render('chart-energy', CH.donutChart({
+    segments: D.energy.rows.map(function (r) { return { name: r.name, value: r.value, decimals: 2 }; }),
+    unitSuffix: '%', centerTop: '100%', centerBottom: 'primary energy, 2024',
+    aria: 'Donut chart: primary energy mix 2024 — coal 40.37 percent, oil 28.82, natural gas 16.17, new and renewable 14.65'
+  }));
+  CH.render('chart-co2', CH.barChart({
+    labels: D.co2PerCapita.years.map(function (y) { return String(y); }),
+    values: D.co2PerCapita.values, decimals: 2, highlightIndex: 2,
+    aria: 'Bar chart: CO2 per capita 2.72 tonnes in 2022, 2.71 in 2023, 2.87 in 2024'
+  }));
+});
+</script>
+</body>
+</html>

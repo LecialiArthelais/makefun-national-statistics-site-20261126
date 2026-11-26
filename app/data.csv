@@ -1,0 +1,41 @@
+topic,indicator,value,year,source
+Population,Population,"283,487,931",2024,World Bank WDI (SP.POP.TOTL)
+Population,Population growth,0.81% per year,2024,World Bank WDI (SP.POP.GROW)
+Population,Median age,30.1 years,2024,UN World Population Prospects 2024
+Population,Fertility rate,2.12 children per woman,2024,World Bank WDI (SP.DYN.TFRT.IN)
+Population,Dependency ratio,46.8,2024,World Bank WDI (SP.POP.DPND)
+Population,Population density,149 people per km²,2024,World Bank WDI
+Population,Urban population,58.8% of total,2024,World Bank WDI (SP.URB.TOTL.IN.ZS)
+Population,Labour force,143.1 million,2024,CIA World Factbook
+Population,Islands (official count),"17,508",,CIA World Factbook; Law No. 9/1996
+Population,Provinces,38,2025,"BPS, SUPAS 2025"
+Population,Land area,"1,904,569 km²",2024,CIA World Factbook
+Economy,GDP (nominal),"$1,396.3 billion",2024,World Bank WDI (NY.GDP.MKTP.CD)
+Economy,GDP per capita,"$4,925",2024,World Bank WDI (NY.GDP.PCAP.CD)
+Economy,"GDP per capita, PPP","$16,472",2024,World Bank WDI (NY.GDP.PCAP.PP.CD)
+Economy,Real GDP growth,5.03%,2024,World Bank WDI (NY.GDP.MKTP.KD.ZG); BPS
+Economy,Inflation (CPI),2.18%,2024,World Bank WDI (FP.CPI.TOTL.ZG)
+Economy,"Unemployment (open, BPS)",4.91%,2024,"BPS (TPT), August 2024"
+Economy,Unemployment (ILO modelled),3.30%,2024,World Bank WDI (SL.UEM.TOTL.ZS) — methodology differs from BPS
+Economy,"Rupiah, average per USD","15,855",2024,World Bank WDI (PA.NUS.FCRF)
+Economy,Gini index,34.9,2024,World Bank WDI (SI.POV.GINI)
+Economy,Human Development Index,0.728,2023,UNDP Human Development Report
+Health,Life expectancy at birth,71.3 years,2024,World Bank WDI (SP.DYN.LE00.IN)
+Health,"Life expectancy, male",69.2 years,2024,World Bank WDI
+Health,"Life expectancy, female",73.4 years,2024,World Bank WDI
+Health,Infant mortality,"17.7 per 1,000 live births",2024,World Bank WDI (SH.DYN.MORT)
+Health,Health spending,2.7% of GDP,2023,World Bank WDI (SH.XPD.CHEX.GD.ZS)
+Education,Adult literacy (15+),96.0%,2020,World Bank WDI (SE.ADT.LITR.ZS) — latest available
+Education,Primary school enrolment (gross),100.0%,2024,World Bank WDI (SE.PRM.ENRR)
+Education,Secondary school enrolment (gross),98.8%,2024,World Bank WDI (SE.SEC.ENRR)
+Environment,Forest area,50.7% of land area,2024,World Bank WDI (AG.LND.FRST.ZS)
+Environment,CO2 emissions per capita,2.87 tonnes,2024,"World Bank WDI (EN.ATM.CO2E.PC, via mirrors)"
+Environment,"CO2 emissions, total",812.2 million tonnes,2024,"World Bank WDI (via mirrors), excl. land use"
+Environment,Renewable share of primary energy,14.65%,2024,Ministry of Energy & Mineral Resources (ESDM)
+Trade,Exports of goods,$264.7 billion,2024,BPS / customs data
+Trade,Exports of goods & services,22.3% of GDP,2024,World Bank WDI (NE.EXP.GNFS.ZS)
+Trade,Foreign tourist arrivals,13.90 million (+19.05% yoy),2024,"BPS, BRS No. 11/02/Th. XXVIII"
+Trade,Largest export market (China),$68.0 billion (22.5%),2024,Customs data
+Trade,Top export: mineral fuels & oils,$55.52 billion (21.0%),2024,BPS / customs data
+Trade,Top export: fats & oils (incl. palm oil),$26.82 billion (10.1%),2024,BPS / customs data
+Trade,Top export: iron & steel,$25.80 billion (9.8%),2024,BPS / customs data

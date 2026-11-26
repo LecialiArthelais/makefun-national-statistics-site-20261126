@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>People &amp; Regions — Indonesia in Numbers</title>
+<meta name="description" content="Indonesia's people: population, age structure, urbanisation, islands and provinces.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<script src="data.js" defer></script>
+<script src="charts.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">ID</span><span class="brand-name">Indonesia <span>in Numbers</span></span></a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
+      <svg viewBox="0 0 20 20" fill="none" stroke="#111110" stroke-width="2" stroke-linecap="round"><line x1="3" y1="5" x2="17" y2="5"/><line x1="3" y1="10" x2="17" y2="10"/><line x1="3" y1="15" x2="17" y2="15"/></svg>
+    </button>
+    <nav class="nav" id="main-nav" aria-label="Sections">
+      <a href="index.html">Overview</a>
+      <a href="economy.html">Economy</a>
+      <a href="people.html" class="active" aria-current="page">People &amp; Regions</a>
+      <a href="society.html">Society</a>
+      <a href="environment.html">Environment</a>
+      <a href="data.html">Data &amp; Sources</a>
+    </nav>
+    <div class="topbar-right">
+      <span class="pill red"><span class="dot"></span>Latest: 2024</span>
+      <span class="pill hide-phone">Data as of Nov 2026</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="page-head">
+    <p class="eyebrow">People &amp; Regions · <b>2024–2026</b></p>
+    <h1>283.5 million people, mostly young, mostly on Java</h1>
+    <p>Median age 30.1. More than two-thirds of the population is of working age. And 55.65% of everyone lives on one island — Java — in a country of 17,508 islands and 38 provinces.</p>
+  </section>
+
+  <section class="kpis" aria-label="People indicators">
+    <div class="kpi"><p class="k-label">Population</p><p class="k-value">283.5<small> m</small></p><p class="k-sub">4th largest in the world</p></div>
+    <div class="kpi"><p class="k-label">Median age</p><p class="k-value">30.1<small> yrs</small></p><p class="k-sub">UN WPP 2024</p></div>
+    <div class="kpi"><p class="k-label">Working age</p><p class="k-value">68.1<small>%</small></p><p class="k-sub">15–64 years · 193.1m people</p></div>
+    <div class="kpi"><p class="k-label">Urban</p><p class="k-value">58.8<small>%</small></p><p class="k-sub">Up from 53.2% in 2015</p></div>
+    <div class="kpi"><p class="k-label">Fertility</p><p class="k-value">2.12</p><p class="k-sub">Children per woman</p></div>
+    <div class="kpi"><p class="k-label">Density</p><p class="k-value">149<small>/km&sup2;</small></p><p class="k-sub">1,904,569 km&sup2; of land</p></div>
+  </section>
+
+  <section class="section">
+    <div class="grid-2">
+      <div class="card wide">
+        <div class="card-tools">
+          <h3>Where people live</h3>
+          <div class="seg" role="group" aria-label="Regional view">
+            <button type="button" id="view-islands" aria-pressed="true">By island group</button>
+            <button type="button" id="view-provinces" aria-pressed="false">Top provinces</button>
+          </div>
+        </div>
+        <p class="card-sub" id="region-sub">Population by island group, 2025. Java holds 158.41 million people — more than the rest of the country combined.</p>
+        <div class="chart" id="chart-region"></div>
+        <p class="source" id="region-source"><b>Source:</b> BPS, SUPAS 2025 (BRS No. 51/05/Th. XXIX). Maluku &amp; Papua is the residual after the five named groups — derived.</p>
+      </div>
+      <div class="card">
+        <h3>A young country, slowly ageing</h3>
+        <p class="card-sub">Population by age group, % of total, 2024. The working-age share is the demographic dividend: 68.1% of people are 15–64.</p>
+        <div class="chart" id="chart-age"></div>
+        <p class="source"><b>Source:</b> World Bank WDI (SP.POP.0014 / SP.POP.1564 / SP.POP.65UP.TO.ZS). Absolute numbers are population &times; share — derived, labelled as such.</p>
+      </div>
+      <div class="card">
+        <h3>Urbanisation, year by year</h3>
+        <p class="card-sub">Urban population, % of total, 2015–2024. A steady climb of about half a point a year, with no reversals.</p>
+        <div class="chart" id="chart-urban"></div>
+        <p class="source"><b>Source:</b> World Bank WDI (SP.URB.TOTL.IN.ZS), 2024.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="grid-2">
+      <div class="card prose">
+        <h3>Reading the population</h3>
+        <p><b>The dividend is now.</b> With 68.1% of people of working age and a dependency ratio of 46.8, Indonesia is in the middle of its demographic dividend — the window when the workforce is large relative to children and retirees. The 65+ share is only 7.3% today, so the window is still open.</p>
+        <p><b>Growth is slowing gently.</b> Population growth was 0.81% in 2024 and fertility sits at 2.12 children per woman — just above replacement. The population still grows by more than two million people a year, but the pace is easing.</p>
+        <p><b>Geography is destiny.</b> Java&rsquo;s 55.65% share makes it the most populous island on Earth. West Java alone (51.16 million) has more people than most countries. That concentration shapes everything from infrastructure spending to election maps.</p>
+      </div>
+      <div class="card">
+        <h3>Population, 2015–2024</h3>
+        <p class="card-sub">Millions of people. From 261.8 million to 283.5 million in ten years — about 2.2 million added each year.</p>
+        <div class="chart" id="chart-population"></div>
+        <p class="source"><b>Source:</b> World Bank WDI (SP.POP.TOTL), 2024. BPS SUPAS 2025 puts the 2025 total at 284.67 million.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Figures are from the World Bank World Development Indicators, BPS — Statistics Indonesia, UNDP and the CIA World Factbook. Each figure shows its own reference year; years differ by indicator.</p>
+    <p>Indonesia in Numbers is an independent statistics site. It is not affiliated with BPS, the World Bank or UNDP. <a href="data.html">See all data &amp; sources &rarr;</a></p>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('DOMContentLoaded', function () {
+  CH.initMenu();
+  var D = INDATA;
+  CH.render('chart-age', CH.hbarChart({
+    rows: D.ageGroups.rows.map(function (r, i) { return { name: r.name, value: r.share, highlight: i === 1, extra: '· ' + r.millions.toFixed(1) + 'm people' }; }),
+    decimals: 1, unitSuffix: '%', labelWidth: 130,
+    aria: 'Horizontal bars: age groups 2024 — 0 to 14 years 24.6 percent, 15 to 64 years 68.1, 65 plus 7.3'
+  }));
+  CH.render('chart-urban', CH.lineChart({
+    labels: D.years, values: D.series.urban.values, decimals: 1, unitSuffix: '%', ymin: 52, ymax: 60,
+    aria: 'Line chart: urban population rose from 53.2 percent in 2015 to 58.8 in 2024'
+  }));
+  CH.render('chart-population', CH.lineChart({
+    labels: D.years, values: D.series.population.values, decimals: 1, unitSuffix: 'm', ymin: 255, ymax: 290,
+    aria: 'Line chart: population rose from 261.8 million in 2015 to 283.5 million in 2024'
+  }));
+  var bI = document.getElementById('view-islands');
+  var bP = document.getElementById('view-provinces');
+  var sub = document.getElementById('region-sub');
+  var src = document.getElementById('region-source');
+  function drawIslands() {
+    CH.render('chart-region', CH.donutChart({
+      segments: D.islands.rows.map(function (r) { return { name: r.name, value: r.share, decimals: 2 }; }),
+      unitSuffix: '%', centerTop: '284.67m', centerBottom: 'people, SUPAS 2025',
+      aria: 'Donut chart: population by island group 2025 — Java 55.65 percent, Sumatra 21.89, Sulawesi 7.40, Kalimantan 6.23, Bali and Nusa Tenggara 5.60, Maluku and Papua 3.23'
+    }));
+    sub.textContent = 'Population by island group, 2025. Java holds 158.41 million people — more than the rest of the country combined.';
+    src.innerHTML = '<b>Source:</b> BPS, SUPAS 2025 (BRS No. 51/05/Th. XXIX). Maluku &amp; Papua is the residual after the five named groups — derived.';
+  }
+  function drawProvinces() {
+    CH.render('chart-region', CH.hbarChart({
+      rows: D.provinces.rows.map(function (r, i) { return { name: r.name, value: r.value, highlight: i === 0 }; }),
+      decimals: 2, unitSuffix: 'm', labelWidth: 150,
+      aria: 'Horizontal bars: largest provinces 2026 — West Java 51.16 million, East Java 42.35, Central Java 38.57, North Sumatra 15.98, Banten 12.64'
+    }));
+    sub.textContent = 'Largest provinces by population, 2026 projections. The top three — all on Java — hold 132.08 million people between them.';
+    src.innerHTML = '<b>Source:</b> BPS, Statistik Indonesia 2026 (population projections).';
+  }
+  function setView(which) {
+    bI.setAttribute('aria-pressed', which === 'islands' ? 'true' : 'false');
+    bP.setAttribute('aria-pressed', which === 'provinces' ? 'true' : 'false');
+    if (which === 'islands') drawIslands(); else drawProvinces();
+  }
+  bI.addEventListener('click', function () { setView('islands'); });
+  bP.addEventListener('click', function () { setView('provinces'); });
+  drawIslands();
+});
+</script>
+</body>
+</html>

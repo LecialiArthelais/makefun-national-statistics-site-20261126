@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data &amp; Sources — Indonesia in Numbers</title>
+<meta name="description" content="Every figure on Indonesia in Numbers: indicator, value, year and source — filterable, sortable, downloadable as CSV.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<script src="data.js" defer></script>
+<script src="charts.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">ID</span><span class="brand-name">Indonesia <span>in Numbers</span></span></a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
+      <svg viewBox="0 0 20 20" fill="none" stroke="#111110" stroke-width="2" stroke-linecap="round"><line x1="3" y1="5" x2="17" y2="5"/><line x1="3" y1="10" x2="17" y2="10"/><line x1="3" y1="15" x2="17" y2="15"/></svg>
+    </button>
+    <nav class="nav" id="main-nav" aria-label="Sections">
+      <a href="index.html">Overview</a>
+      <a href="economy.html">Economy</a>
+      <a href="people.html">People &amp; Regions</a>
+      <a href="society.html">Society</a>
+      <a href="environment.html">Environment</a>
+      <a href="data.html" class="active" aria-current="page">Data &amp; Sources</a>
+    </nav>
+    <div class="topbar-right">
+      <span class="pill red"><span class="dot"></span>Latest: 2024</span>
+      <span class="pill hide-phone">Data as of Nov 2026</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="page-head">
+    <p class="eyebrow">Data &amp; Sources · <b>Every figure</b></p>
+    <h1>All the data, in one table</h1>
+    <p>Every indicator on this site, with its value, reference year and source. Filter by topic or text, sort by indicator or year, or download the whole table as a CSV file.</p>
+  </section>
+
+  <div class="filter-row">
+    <input type="search" id="filter-text" placeholder="Filter indicators — try “GDP” or “World Bank”" aria-label="Filter indicators by text">
+    <div class="seg" role="group" aria-label="Filter by topic" id="topic-buttons">
+      <button type="button" data-topic="All" aria-pressed="true">All</button>
+      <button type="button" data-topic="Population" aria-pressed="false">Population</button>
+      <button type="button" data-topic="Economy" aria-pressed="false">Economy</button>
+      <button type="button" data-topic="Health" aria-pressed="false">Health</button>
+      <button type="button" data-topic="Education" aria-pressed="false">Education</button>
+      <button type="button" data-topic="Environment" aria-pressed="false">Environment</button>
+      <button type="button" data-topic="Trade" aria-pressed="false">Trade</button>
+    </div>
+    <a class="btn primary" href="data.csv" download="indonesia-in-numbers.csv">Download data (CSV)</a>
+  </div>
+  <p class="result-count" id="result-count" aria-live="polite"></p>
+
+  <div class="table-scroll">
+    <table class="data" id="data-table">
+      <thead>
+        <tr>
+          <th class="sortable" data-sort="name" scope="col">Indicator ↕</th>
+          <th scope="col">Value</th>
+          <th class="sortable" data-sort="year" scope="col">Year ↕</th>
+          <th scope="col">Source</th>
+        </tr>
+      </thead>
+      <tbody id="data-body"></tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <b>Methodology.</b> All World Bank figures are World Development Indicators (WDI vintage 11 Nov 2026), pulled directly from the World Bank API. BPS figures are from Berita Resmi Statistik releases. Years differ by indicator — each row shows its own reference year, so a 2020 literacy figure sits honestly beside a 2024 GDP figure. Derived figures (for example age-group populations, computed as population &times; share) are labelled as derived. Where a source disagreed with itself, the direct API value was used and the conflict noted on the relevant page.
+  </div>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Sources</h2>
+      <p>Publishers of the figures on this site. Names are given as text — this site loads nothing from any other origin.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>International</h3>
+        <ul class="facts">
+          <li><span class="f-k">World Bank</span><span class="f-v">World Development Indicators</span></li>
+          <li><span class="f-k">UNDP</span><span class="f-v">Human Development Report</span></li>
+          <li><span class="f-k">UN Population Division</span><span class="f-v">World Population Prospects 2024</span></li>
+          <li><span class="f-k">CIA</span><span class="f-v">The World Factbook</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Indonesian</h3>
+        <ul class="facts">
+          <li><span class="f-k">BPS — Statistics Indonesia</span><span class="f-v">Berita Resmi Statistik</span></li>
+          <li><span class="f-k">BPS</span><span class="f-v">SUPAS 2025; Statistik Indonesia 2026</span></li>
+          <li><span class="f-k">Ministry of Energy &amp; Mineral Resources</span><span class="f-v">Primary energy mix, 2024</span></li>
+          <li><span class="f-k">Customs data</span><span class="f-v">Trade by commodity &amp; destination</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Figures are from the World Bank World Development Indicators, BPS — Statistics Indonesia, UNDP and the CIA World Factbook. Each figure shows its own reference year; years differ by indicator.</p>
+    <p>Indonesia in Numbers is an independent statistics site. It is not affiliated with BPS, the World Bank or UNDP. <a href="index.html">Back to the overview &rarr;</a></p>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('DOMContentLoaded', function () {
+  CH.initMenu();
+  var rows = INDATA.indicators.slice();
+  var body = document.getElementById('data-body');
+  var count = document.getElementById('result-count');
+  var textInput = document.getElementById('filter-text');
+  var topic = 'All';
+  var sortKey = null, sortDir = 1;
+
+  function esc(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+  function render() {
+    var q = textInput.value.trim().toLowerCase();
+    var list = rows.filter(function (r) {
+      if (topic !== 'All' && r.topic !== topic) return false;
+      if (!q) return true;
+      return (r.name + ' ' + r.value + ' ' + r.source + ' ' + r.topic).toLowerCase().indexOf(q) !== -1;
+    });
+    if (sortKey) {
+      list.sort(function (a, b) {
+        var av = a[sortKey], bv = b[sortKey];
+        if (av === null) return 1;
+        if (bv === null) return -1;
+        if (av < bv) return -sortDir;
+        if (av > bv) return sortDir;
+        return 0;
+      });
+    }
+    var html = '';
+    list.forEach(function (r) {
+      html += '<tr><td>' + esc(r.name) + '</td><td class="num">' + esc(r.value) + '</td><td class="num">' +
+        (r.year === null ? '—' : r.year) + '</td><td>' + esc(r.source) + '</td></tr>';
+    });
+    body.innerHTML = html;
+    count.textContent = list.length + ' of ' + rows.length + ' indicators' +
+      (topic !== 'All' ? ' · topic: ' + topic : '') + (q ? ' · matching “' + textInput.value.trim() + '”' : '');
+  }
+  textInput.addEventListener('input', render);
+  var topicBtns = document.querySelectorAll('#topic-buttons button');
+  topicBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      topic = btn.getAttribute('data-topic');
+      topicBtns.forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      render();
+    });
+  });
+  var sortHeads = document.querySelectorAll('th.sortable');
+  sortHeads.forEach(function (th) {
+    th.addEventListener('click', function () {
+      var key = th.getAttribute('data-sort');
+      if (sortKey === key) { sortDir = -sortDir; } else { sortKey = key; sortDir = 1; }
+      sortHeads.forEach(function (h) {
+        var base = h.textContent.replace(/ [↑↓↕]/, '');
+        h.textContent = base + (h === th ? (sortDir === 1 ? ' ↑' : ' ↓') : ' ↕');
+      });
+      render();
+    });
+  });
+  render();
+});
+</script>
+</body>
+</html>

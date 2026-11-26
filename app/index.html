@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Indonesia in Numbers — National Statistics, 2024</title>
+<meta name="description" content="Indonesia in Numbers: population, GDP, health, education and environment statistics for Indonesia, 2015–2024, from the World Bank, BPS and UNDP.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<script src="data.js" defer></script>
+<script src="charts.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">ID</span><span class="brand-name">Indonesia <span>in Numbers</span></span></a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
+      <svg viewBox="0 0 20 20" fill="none" stroke="#111110" stroke-width="2" stroke-linecap="round"><line x1="3" y1="5" x2="17" y2="5"/><line x1="3" y1="10" x2="17" y2="10"/><line x1="3" y1="15" x2="17" y2="15"/></svg>
+    </button>
+    <nav class="nav" id="main-nav" aria-label="Sections">
+      <a href="index.html" class="active" aria-current="page">Overview</a>
+      <a href="economy.html">Economy</a>
+      <a href="people.html">People &amp; Regions</a>
+      <a href="society.html">Society</a>
+      <a href="environment.html">Environment</a>
+      <a href="data.html">Data &amp; Sources</a>
+    </nav>
+    <div class="topbar-right">
+      <span class="pill red"><span class="dot"></span>Latest: 2024</span>
+      <span class="pill hide-phone">Data as of Nov 2026</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="eyebrow">National Statistics · Indonesia · <b>2024</b></p>
+    <h1>Indonesia in Numbers</h1>
+    <p class="lede"><b>283.5 million people</b> across <b>17,508 islands</b>. The world&rsquo;s 4th-largest population and Southeast Asia&rsquo;s largest economy &mdash; ten years of official data, one page.</p>
+  </section>
+
+  <section class="kpis" aria-label="Headline indicators">
+    <div class="kpi"><p class="k-label">Population</p><p class="k-value">283.5<small> m</small></p><p class="k-sub"><b>+0.81%</b> in 2024</p></div>
+    <div class="kpi"><p class="k-label">GDP</p><p class="k-value">$1.40<small> tn</small></p><p class="k-sub"><b>+5.03%</b> real growth</p></div>
+    <div class="kpi"><p class="k-label">GDP per capita</p><p class="k-value">$4,925</p><p class="k-sub"><b>$16,472</b> PPP</p></div>
+    <div class="kpi"><p class="k-label">Life expectancy</p><p class="k-value">71.3<small> yrs</small></p><p class="k-sub">Male 69.2 · Female 73.4</p></div>
+    <div class="kpi"><p class="k-label">Internet users</p><p class="k-value">72.8<small>%</small></p><p class="k-sub">Was <b>22.1%</b> in 2015</p></div>
+    <div class="kpi"><p class="k-label">Unemployment</p><p class="k-value">4.91<small>%</small></p><p class="k-sub">BPS, Aug 2024</p></div>
+  </section>
+
+  <section class="section">
+    <div class="grid-2">
+      <div class="card wide">
+        <h3>Indonesia went online in a decade</h3>
+        <p class="card-sub">Internet users, % of population, 2015–2024. The steepest verified trend in the country&rsquo;s data: 22.1% to 72.8% — a 3.3&times; rise.</p>
+        <div class="chart" id="chart-internet"></div>
+        <p class="source"><b>Source:</b> World Bank WDI (IT.NET.USER.ZS), 2024. Values are the share of the population using the internet.</p>
+      </div>
+      <div class="card">
+        <h3>A $1.40 trillion economy</h3>
+        <p class="card-sub">GDP, nominal, $ billion, 2015–2024. Steady growth, one sharp COVID dip, then recovery past the pre-pandemic level.</p>
+        <div class="chart" id="chart-gdp"></div>
+        <p class="source"><b>Source:</b> World Bank WDI (NY.GDP.MKTP.CD), 2024.</p>
+      </div>
+      <div class="card">
+        <h3>Growth never really stopped</h3>
+        <p class="card-sub">Real GDP growth, % per year. Ten years near 5% — except 2020, the only contraction in the series.</p>
+        <div class="chart" id="chart-growth"></div>
+        <p class="source"><b>Source:</b> World Bank WDI (NY.GDP.MKTP.KD.ZG); BPS reports 5.03% for 2024.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="grid-2">
+      <div class="card">
+        <h3>At a glance</h3>
+        <ul class="facts">
+          <li><span class="f-k">Capital</span><span class="f-v">Jakarta</span></li>
+          <li><span class="f-k">New capital under construction</span><span class="f-v">Nusantara</span></li>
+          <li><span class="f-k">Currency</span><span class="f-v">Rupiah (IDR) · 15,855 / USD</span></li>
+          <li><span class="f-k">Land area</span><span class="f-v">1,904,569 km&sup2;</span></li>
+          <li><span class="f-k">Provinces</span><span class="f-v">38 (2025)</span></li>
+          <li><span class="f-k">Government</span><span class="f-v">Presidential republic</span></li>
+          <li><span class="f-k">President</span><span class="f-v">Prabowo Subianto (since 20 Oct 2024)</span></li>
+          <li><span class="f-k">Independence</span><span class="f-v">17 August 1945</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Latest releases</h3>
+        <ul class="releases">
+          <li><span class="r-date">3 Feb 2025 · BPS</span>Foreign tourist arrivals reached <b>13.90 million</b> in 2024, up 19.05% on the year.</li>
+          <li><span class="r-date">5 May 2026 · BPS</span>SUPAS 2025 puts the population at <b>284.67 million</b>; 55.65% live on Java.</li>
+          <li><span class="r-date">2024 · BPS</span>Full-year GDP growth <b>5.03%</b>; open unemployment 4.91% in August 2024.</li>
+          <li><span class="r-date">2024 · World Bank</span>GDP per capita <b>$4,925</b>; life expectancy back to <b>71.3 years</b> after the COVID dip.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>The decade in four numbers</h2>
+      <p>Each mini-chart runs 2015–2024. Hover nothing — the 2024 value is printed on every tile.</p>
+    </div>
+    <div class="minis">
+      <div class="mini"><p class="m-label">GDP growth</p><p class="m-value">5.03<small>%</small></p><div class="m-chart" id="mini-growth"></div></div>
+      <div class="mini"><p class="m-label">Inflation (CPI)</p><p class="m-value">2.18<small>%</small></p><div class="m-chart" id="mini-inflation"></div></div>
+      <div class="mini"><p class="m-label">Urban population</p><p class="m-value">58.8<small>%</small></p><div class="m-chart" id="mini-urban"></div></div>
+      <div class="mini"><p class="m-label">Life expectancy</p><p class="m-value">71.3<small> yrs</small></p><div class="m-chart" id="mini-life"></div></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Figures are from the World Bank World Development Indicators, BPS — Statistics Indonesia, UNDP and the CIA World Factbook. Each figure shows its own reference year; years differ by indicator.</p>
+    <p>Indonesia in Numbers is an independent statistics site. It is not affiliated with BPS, the World Bank or UNDP. <a href="data.html">See all data &amp; sources &rarr;</a></p>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('DOMContentLoaded', function () {
+  CH.initMenu();
+  var D = INDATA;
+  CH.render('chart-internet', CH.lineChart({
+    labels: D.years, values: D.series.internet.values, decimals: 1, unitSuffix: '%',
+    aria: 'Line chart: internet users rose from 22.1 percent in 2015 to 72.8 percent in 2024',
+    annotate: [{ index: 9, text: '3.3× in a decade' }]
+  }));
+  CH.render('chart-gdp', CH.lineChart({
+    labels: D.years, values: D.series.gdpNominal.values, decimals: 0, unitSuffix: '',
+    aria: 'Line chart: GDP rose from 860.9 billion dollars in 2015 to 1396.3 billion in 2024',
+    annotate: [{ index: 5, text: 'COVID dip: $1,059B' }]
+  }));
+  CH.render('chart-growth', CH.barChart({
+    labels: D.years, values: D.series.gdpGrowth.values, decimals: 2, highlightIndex: 5,
+    aria: 'Bar chart: real GDP growth 2015 to 2024, with a contraction of 2.07 percent in 2020',
+    annotate: [{ index: 5, text: 'COVID-19: −2.07%' }]
+  }));
+  function spark(id, values, dec, ymin, ymax) {
+    var W = 220, H = 56, L = 2, R = 2, T = 6, B = 4;
+    var lo = ymin, hi = ymax;
+    var pts = values.map(function (v, i) {
+      var x = L + ((W - L - R) * i) / (values.length - 1);
+      var y = T + (H - T - B) * (1 - (v - lo) / (hi - lo));
+      return x.toFixed(1) + ',' + y.toFixed(1);
+    }).join(' ');
+    var last = values[values.length - 1];
+    var lx = W - R, ly = T + (H - T - B) * (1 - (last - lo) / (hi - lo));
+    document.getElementById(id).innerHTML =
+      '<svg viewBox="0 0 ' + W + ' ' + H + '" aria-hidden="true">' +
+      '<polyline points="' + pts + '" fill="none" stroke="#C8102E" stroke-width="2" stroke-linejoin="round"/>' +
+      '<circle cx="' + lx.toFixed(1) + '" cy="' + ly.toFixed(1) + '" r="3" fill="#C8102E"/></svg>';
+  }
+  spark('mini-growth', D.series.gdpGrowth.values, 2, -2.5, 5.6);
+  spark('mini-inflation', D.series.inflation.values, 2, 0, 7);
+  spark('mini-urban', D.series.urban.values, 1, 52, 60);
+  spark('mini-life', D.series.lifeExpectancy.values, 1, 66, 72);
+});
+</script>
+</body>
+</html>
