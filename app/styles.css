@@ -263,6 +263,15 @@ footer a { color: var(--ink); font-weight: 700; }
 .tilemap-card svg { width: 100%; height: auto; }
 
 /* ---------- responsive ---------- */
+@media (max-width: 1399px) {
+  /* The seventh nav item (Regions) pushes the header past its 1120px box
+     on 1280/1366px viewports (horizontal scroll + clipped pill): hide the
+     "Data as of" pill — the cover dateline says the same — and tighten the
+     nav so the header fits again. */
+  .topbar-right .pill.hide-phone { display: none; }
+  .topbar-inner { gap: 12px; }
+  .nav a { padding: 7px 9px; }
+}
 @media (max-width: 1023px) {
   .kpis { grid-template-columns: repeat(3, 1fr); }
   .minis { grid-template-columns: repeat(2, 1fr); }
