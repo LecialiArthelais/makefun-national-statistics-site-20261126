@@ -21,6 +21,7 @@
       <a href="index.html">Overview</a>
       <a href="economy.html">Economy</a>
       <a href="people.html">People &amp; Regions</a>
+      <a href="regions.html">Regions</a>
       <a href="society.html">Society</a>
       <a href="environment.html" class="active" aria-current="page">Environment</a>
       <a href="data.html">Data &amp; Sources</a>
@@ -40,12 +41,12 @@
   </section>
 
   <section class="kpis" aria-label="Environment indicators">
-    <div class="kpi"><p class="k-label">Forest area</p><p class="k-value">50.7<small>%</small></p><p class="k-sub">Of land area, 2024</p></div>
-    <div class="kpi"><p class="k-label">CO2 per capita</p><p class="k-value">2.87<small> t</small></p><p class="k-sub">812.2 Mt total, 2024</p></div>
-    <div class="kpi"><p class="k-label">Renewables</p><p class="k-value">14.65<small>%</small></p><p class="k-sub">Of primary energy</p></div>
-    <div class="kpi"><p class="k-label">Coal share</p><p class="k-value">40.37<small>%</small></p><p class="k-sub">Of primary energy</p></div>
-    <div class="kpi"><p class="k-label">Tourist arrivals</p><p class="k-value">13.90<small> m</small></p><p class="k-sub"><b>+19.05%</b> on 2023</p></div>
-    <div class="kpi"><p class="k-label">Gini index</p><p class="k-value">34.9</p><p class="k-sub">2024 · see Society</p></div>
+    <div class="kpi"><p class="k-label">Forest area</p><p class="k-value">50.7<small>%</small></p><p class="k-sub">Of land area, 2024</p><p class="k-src">World Bank WDI (AG.LND.FRST.ZS) · 2024</p></div>
+    <div class="kpi"><p class="k-label">CO2 per capita</p><p class="k-value">2.87<small> t</small></p><p class="k-sub">812.2 Mt total, 2024</p><p class="k-src">World Bank WDI (EN.ATM.CO2E.PC) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Renewables</p><p class="k-value">14.65<small>%</small></p><p class="k-sub">Of primary energy</p><p class="k-src">Ministry of Energy (ESDM) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Coal share</p><p class="k-value">40.37<small>%</small></p><p class="k-sub">Of primary energy</p><p class="k-src">Ministry of Energy (ESDM) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Tourist arrivals</p><p class="k-value">13.90<small> m</small></p><p class="k-sub"><b>+19.05%</b> on 2023</p><p class="k-src">BPS, BRS No. 11/02/Th. XXVIII · 2024</p></div>
+    <div class="kpi"><p class="k-label">CO2 total</p><p class="k-value">812.2<small> Mt</small></p><p class="k-sub">Excl. land use, 2024</p><p class="k-src">World Bank WDI · 2024</p></div>
   </section>
 
   <section class="section">
@@ -134,6 +135,7 @@ window.addEventListener('DOMContentLoaded', function () {
   CH.render('chart-co2', CH.barChart({
     labels: D.co2PerCapita.years.map(function (y) { return String(y); }),
     values: D.co2PerCapita.values, decimals: 2, highlightIndex: 2,
+    ymax: 3, ticks: [0, 1, 2, 3], tickDecimals: 0,
     aria: 'Bar chart: CO2 per capita 2.72 tonnes in 2022, 2.71 in 2023, 2.87 in 2024'
   }));
 });

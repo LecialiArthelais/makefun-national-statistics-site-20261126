@@ -21,6 +21,7 @@
       <a href="index.html">Overview</a>
       <a href="economy.html">Economy</a>
       <a href="people.html" class="active" aria-current="page">People &amp; Regions</a>
+      <a href="regions.html">Regions</a>
       <a href="society.html">Society</a>
       <a href="environment.html">Environment</a>
       <a href="data.html">Data &amp; Sources</a>
@@ -34,18 +35,18 @@
 
 <main class="wrap">
   <section class="page-head">
-    <p class="eyebrow">People &amp; Regions · <b>2024–2026</b></p>
+    <p class="eyebrow">People &amp; Regions · <b>2024–2025</b></p>
     <h1>283.5 million people, mostly young, mostly on Java</h1>
     <p>Median age 30.1. More than two-thirds of the population is of working age. And 55.65% of everyone lives on one island — Java — in a country of 17,508 islands and 38 provinces.</p>
   </section>
 
   <section class="kpis" aria-label="People indicators">
-    <div class="kpi"><p class="k-label">Population</p><p class="k-value">283.5<small> m</small></p><p class="k-sub">4th largest in the world</p></div>
-    <div class="kpi"><p class="k-label">Median age</p><p class="k-value">30.1<small> yrs</small></p><p class="k-sub">UN WPP 2024</p></div>
-    <div class="kpi"><p class="k-label">Working age</p><p class="k-value">68.1<small>%</small></p><p class="k-sub">15–64 years · 193.1m people</p></div>
-    <div class="kpi"><p class="k-label">Urban</p><p class="k-value">58.8<small>%</small></p><p class="k-sub">Up from 53.2% in 2015</p></div>
-    <div class="kpi"><p class="k-label">Fertility</p><p class="k-value">2.12</p><p class="k-sub">Children per woman</p></div>
-    <div class="kpi"><p class="k-label">Density</p><p class="k-value">149<small>/km&sup2;</small></p><p class="k-sub">1,904,569 km&sup2; of land</p></div>
+    <div class="kpi"><p class="k-label">Population</p><p class="k-value">283.5<small> m</small></p><p class="k-sub">4th largest in the world</p><p class="k-src">World Bank WDI (SP.POP.TOTL) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Median age</p><p class="k-value">30.1<small> yrs</small></p><p class="k-sub">UN WPP 2024</p><p class="k-src">UN World Population Prospects 2024</p></div>
+    <div class="kpi"><p class="k-label">Working age</p><p class="k-value">68.1<small>%</small></p><p class="k-sub">15–64 years · 193.1m people</p><p class="k-src">World Bank WDI (SP.POP.1564.TO.ZS) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Urban</p><p class="k-value">58.8<small>%</small></p><p class="k-sub">Up from 53.2% in 2015</p><p class="k-src">World Bank WDI (SP.URB.TOTL.IN.ZS) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Fertility</p><p class="k-value">2.12</p><p class="k-sub">Children per woman</p><p class="k-src">World Bank WDI (SP.DYN.TFRT.IN) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Density</p><p class="k-value">149<small>/km&sup2;</small></p><p class="k-sub">1,904,569 km&sup2; of land</p><p class="k-src">World Bank WDI · 2024</p></div>
   </section>
 
   <section class="section">
@@ -78,12 +79,27 @@
   </section>
 
   <section class="section">
+    <div class="card wide">
+      <h3>The population pyramid, 2024</h3>
+      <p class="card-sub">People by five-year age group and sex, 1 July 2024. The widest band is 10–14 — 12.52 million boys and 11.88 million girls. The pyramid narrows smoothly with age: a young country, with the 65+ share still only 7.3%.</p>
+      <div class="chart" id="chart-pyramid"></div>
+      <ul class="facts">
+        <li><span class="f-k">Widest band: 10–14 years</span><span class="f-v">24.40 million people</span></li>
+        <li><span class="f-k">Median age</span><span class="f-v">30.1 years</span></li>
+        <li><span class="f-k">Aged 65+</span><span class="f-v">7.3% · 20.7 million</span></li>
+        <li><span class="f-k">Aged 80+</span><span class="f-v">3.01 million (1.06m men, 1.94m women)</span></li>
+      </ul>
+      <p class="source"><b>Source:</b> UN World Population Prospects 2024 (medium variant, 1 July 2024). Total 283,487,931 — exactly the World Bank population figure for 2024. The 45–49 band is derived as the residual of the published sex totals; the 80+ band groups 80–84, 85–89, 90–94, 95–99 and 100+ (see Data &amp; Sources).</p>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="grid-2">
       <div class="card prose">
         <h3>Reading the population</h3>
         <p><b>The dividend is now.</b> With 68.1% of people of working age and a dependency ratio of 46.8, Indonesia is in the middle of its demographic dividend — the window when the workforce is large relative to children and retirees. The 65+ share is only 7.3% today, so the window is still open.</p>
         <p><b>Growth is slowing gently.</b> Population growth was 0.81% in 2024 and fertility sits at 2.12 children per woman — just above replacement. The population still grows by more than two million people a year, but the pace is easing.</p>
-        <p><b>Geography is destiny.</b> Java&rsquo;s 55.65% share makes it the most populous island on Earth. West Java alone (51.16 million) has more people than most countries. That concentration shapes everything from infrastructure spending to election maps.</p>
+        <p><b>Geography is destiny.</b> Java&rsquo;s 55.65% share makes it the most populous island on Earth. West Java alone (50.76 million) has more people than most countries. That concentration shapes everything from infrastructure spending to election maps. <a href="regions.html">Explore all 38 provinces &rarr;</a></p>
       </div>
       <div class="card">
         <h3>Population, 2015–2024</h3>
@@ -119,6 +135,10 @@ window.addEventListener('DOMContentLoaded', function () {
     labels: D.years, values: D.series.population.values, decimals: 1, unitSuffix: 'm', ymin: 255, ymax: 290,
     aria: 'Line chart: population rose from 261.8 million in 2015 to 283.5 million in 2024'
   }));
+  CH.render('chart-pyramid', CH.pyramidChart({
+    bands: D.pyramid.bands,
+    aria: 'Population pyramid 2024: male on the left, female on the right, by five-year age group. Widest band 10 to 14 years, 12.5 million men and 11.9 million women'
+  }));
   var bI = document.getElementById('view-islands');
   var bP = document.getElementById('view-provinces');
   var sub = document.getElementById('region-sub');
@@ -133,13 +153,14 @@ window.addEventListener('DOMContentLoaded', function () {
     src.innerHTML = '<b>Source:</b> BPS, SUPAS 2025 (BRS No. 51/05/Th. XXIX). Maluku &amp; Papua is the residual after the five named groups — derived.';
   }
   function drawProvinces() {
+    var top = D.provinces.rows.slice(0, 5);
     CH.render('chart-region', CH.hbarChart({
-      rows: D.provinces.rows.map(function (r, i) { return { name: r.name, value: r.value, highlight: i === 0 }; }),
+      rows: top.map(function (r, i) { return { name: r.name, value: r.pop / 1e6, highlight: i === 0 }; }),
       decimals: 2, unitSuffix: 'm', labelWidth: 150,
-      aria: 'Horizontal bars: largest provinces 2026 — West Java 51.16 million, East Java 42.35, Central Java 38.57, North Sumatra 15.98, Banten 12.64'
+      aria: 'Horizontal bars: largest provinces, mid-2025 estimates — West Java 50.76 million, East Java 42.09, Central Java 38.23, North Sumatra 15.79, Banten 12.54'
     }));
-    sub.textContent = 'Largest provinces by population, 2026 projections. The top three — all on Java — hold 132.08 million people between them.';
-    src.innerHTML = '<b>Source:</b> BPS, Statistik Indonesia 2026 (population projections).';
+    sub.textContent = 'Largest provinces by population, mid-2025 estimates. The top three — all on Java — hold 131.08 million people between them.';
+    src.innerHTML = '<b>Source:</b> BPS, mid-year estimates 2025. <a href="regions.html">Explore all 38 provinces &rarr;</a>';
   }
   function setView(which) {
     bI.setAttribute('aria-pressed', which === 'islands' ? 'true' : 'false');

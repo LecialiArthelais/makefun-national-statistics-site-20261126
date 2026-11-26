@@ -21,6 +21,7 @@
       <a href="index.html" class="active" aria-current="page">Overview</a>
       <a href="economy.html">Economy</a>
       <a href="people.html">People &amp; Regions</a>
+      <a href="regions.html">Regions</a>
       <a href="society.html">Society</a>
       <a href="environment.html">Environment</a>
       <a href="data.html">Data &amp; Sources</a>
@@ -33,24 +34,31 @@
 </header>
 
 <main class="wrap">
-  <section class="hero">
+  <div class="dateline">
+    <span>Indonesia in Numbers — <b>The 2024 Almanac</b></span>
+    <span>Data as of November 2026</span>
+    <span>38 provinces · 2015–2024 · 50 indicators</span>
+  </div>
+  <div class="rule-double" aria-hidden="true"></div>
+
+  <section class="hero almanak">
     <p class="eyebrow">National Statistics · Indonesia · <b>2024</b></p>
     <h1>Indonesia in Numbers</h1>
     <p class="lede"><b>283.5 million people</b> across <b>17,508 islands</b>. The world&rsquo;s 4th-largest population and Southeast Asia&rsquo;s largest economy &mdash; ten years of official data, one page.</p>
   </section>
 
   <section class="kpis" aria-label="Headline indicators">
-    <div class="kpi"><p class="k-label">Population</p><p class="k-value">283.5<small> m</small></p><p class="k-sub"><b>+0.81%</b> in 2024</p></div>
-    <div class="kpi"><p class="k-label">GDP</p><p class="k-value">$1.40<small> tn</small></p><p class="k-sub"><b>+5.03%</b> real growth</p></div>
-    <div class="kpi"><p class="k-label">GDP per capita</p><p class="k-value">$4,925</p><p class="k-sub"><b>$16,472</b> PPP</p></div>
-    <div class="kpi"><p class="k-label">Life expectancy</p><p class="k-value">71.3<small> yrs</small></p><p class="k-sub">Male 69.2 · Female 73.4</p></div>
-    <div class="kpi"><p class="k-label">Internet users</p><p class="k-value">72.8<small>%</small></p><p class="k-sub">Was <b>22.1%</b> in 2015</p></div>
-    <div class="kpi"><p class="k-label">Unemployment</p><p class="k-value">4.91<small>%</small></p><p class="k-sub">BPS, Aug 2024</p></div>
+    <div class="kpi"><p class="k-label">Population</p><p class="k-value">283.5<small> m</small></p><p class="k-sub"><b>+0.81%</b> in 2024</p><div class="k-spark" id="spark-population"></div><p class="k-src">World Bank WDI (SP.POP.TOTL) · 2024</p></div>
+    <div class="kpi"><p class="k-label">GDP</p><p class="k-value">$1.40<small> tn</small></p><p class="k-sub"><b>+5.03%</b> real growth</p><div class="k-spark" id="spark-gdp"></div><p class="k-src">World Bank WDI (NY.GDP.MKTP.CD) · 2024</p></div>
+    <div class="kpi"><p class="k-label">GDP per capita</p><p class="k-value">$4,925</p><p class="k-sub"><b>$16,472</b> PPP</p><div class="k-spark" id="spark-gdppc"></div><p class="k-src">World Bank WDI (NY.GDP.PCAP.CD) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Life expectancy</p><p class="k-value">71.3<small> yrs</small></p><p class="k-sub">Male 69.2 · Female 73.4</p><div class="k-spark" id="spark-life"></div><p class="k-src">World Bank WDI (SP.DYN.LE00.IN) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Internet users</p><p class="k-value">72.8<small>%</small></p><p class="k-sub">Was <b>22.1%</b> in 2015</p><div class="k-spark" id="spark-internet"></div><p class="k-src">World Bank WDI (IT.NET.USER.ZS) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Inflation (CPI)</p><p class="k-value">2.18<small>%</small></p><p class="k-sub">BPS December figure: <b>1.57%</b></p><div class="k-spark" id="spark-inflation"></div><p class="k-src">World Bank WDI (FP.CPI.TOTL.ZG) · 2024</p></div>
   </section>
 
   <section class="section">
     <div class="grid-2">
-      <div class="card wide">
+      <div class="card">
         <h3>Indonesia went online in a decade</h3>
         <p class="card-sub">Internet users, % of population, 2015–2024. The steepest verified trend in the country&rsquo;s data: 22.1% to 72.8% — a 3.3&times; rise.</p>
         <div class="chart" id="chart-internet"></div>
@@ -68,6 +76,19 @@
         <div class="chart" id="chart-growth"></div>
         <p class="source"><b>Source:</b> World Bank WDI (NY.GDP.MKTP.KD.ZG); BPS reports 5.03% for 2024.</p>
       </div>
+      <div class="card">
+        <h3>Poverty is falling; development is rising</h3>
+        <p class="card-sub">The newest BPS releases, September–November 2024. Poverty is at its lowest in the series; the Human Development Index keeps climbing.</p>
+        <ul class="facts">
+          <li><span class="f-k">Poverty rate</span><span class="f-v">8.57% (Sep 2024)</span></li>
+          <li><span class="f-k">People in poverty</span><span class="f-v">24.06 million</span></li>
+          <li><span class="f-k">Poverty line</span><span class="f-v">Rp595,242 / person / month</span></li>
+          <li><span class="f-k">Human Development Index</span><span class="f-v">75.02 (2024)</span></li>
+          <li><span class="f-k">Highest IPM: Jakarta</span><span class="f-v">84.15</span></li>
+          <li><span class="f-k">Lowest IPM: Highland Papua</span><span class="f-v">54.43</span></li>
+        </ul>
+        <p class="source"><b>Sources:</b> BPS, BRS No. 07/01/Th. XXVIII (15 Jan 2025); BPS, Indeks Pembangunan Manusia 2024 (15 Nov 2024). <a href="regions.html">Explore all 38 provinces &rarr;</a></p>
+      </div>
     </div>
   </section>
 
@@ -81,6 +102,7 @@
           <li><span class="f-k">Currency</span><span class="f-v">Rupiah (IDR) · 15,855 / USD</span></li>
           <li><span class="f-k">Land area</span><span class="f-v">1,904,569 km&sup2;</span></li>
           <li><span class="f-k">Provinces</span><span class="f-v">38 (2025)</span></li>
+          <li><span class="f-k">Unemployment</span><span class="f-v">4.91% (BPS, Aug 2024)</span></li>
           <li><span class="f-k">Government</span><span class="f-v">Presidential republic</span></li>
           <li><span class="f-k">President</span><span class="f-v">Prabowo Subianto (since 20 Oct 2024)</span></li>
           <li><span class="f-k">Independence</span><span class="f-v">17 August 1945</span></li>
@@ -89,9 +111,11 @@
       <div class="card">
         <h3>Latest releases</h3>
         <ul class="releases">
-          <li><span class="r-date">3 Feb 2025 · BPS</span>Foreign tourist arrivals reached <b>13.90 million</b> in 2024, up 19.05% on the year.</li>
-          <li><span class="r-date">5 May 2026 · BPS</span>SUPAS 2025 puts the population at <b>284.67 million</b>; 55.65% live on Java.</li>
-          <li><span class="r-date">2024 · BPS</span>Full-year GDP growth <b>5.03%</b>; open unemployment 4.91% in August 2024.</li>
+          <li><span class="r-date">15 Jan 2025 · BPS, BRS No. 07/01/Th. XXVIII</span>Poverty fell to <b>8.57%</b> in September 2024; 24.06 million people remain poor.</li>
+          <li><span class="r-date">5 May 2026 · BPS, BRS No. 51/05/Th. XXIX</span>SUPAS 2025 puts the population at <b>284.67 million</b>; 55.65% live on Java.</li>
+          <li><span class="r-date">15 Nov 2024 · BPS</span>Human Development Index <b>75.02</b>, up 0.63 points on 2023; Jakarta leads at 84.15.</li>
+          <li><span class="r-date">15 Jan 2025 · BPS</span>Trade surplus <b>$31.04 billion</b> in 2024; exports $264.70 billion, imports $233.66 billion.</li>
+          <li><span class="r-date">3 Feb 2025 · BPS, BRS No. 11/02/Th. XXVIII</span>Foreign tourist arrivals reached <b>13.90 million</b> in 2024, up 19.05% on the year.</li>
           <li><span class="r-date">2024 · World Bank</span>GDP per capita <b>$4,925</b>; life expectancy back to <b>71.3 years</b> after the COVID dip.</li>
         </ul>
       </div>
@@ -108,6 +132,15 @@
       <div class="mini"><p class="m-label">Inflation (CPI)</p><p class="m-value">2.18<small>%</small></p><div class="m-chart" id="mini-inflation"></div></div>
       <div class="mini"><p class="m-label">Urban population</p><p class="m-value">58.8<small>%</small></p><div class="m-chart" id="mini-urban"></div></div>
       <div class="mini"><p class="m-label">Life expectancy</p><p class="m-value">71.3<small> yrs</small></p><div class="m-chart" id="mini-life"></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card tilemap-card">
+      <h3>One square is two percent of Indonesia</h3>
+      <p class="card-sub">Population by island group, SUPAS 2025. Java alone takes 28 of the 51 squares — more than the rest of the country combined. Maluku &amp; Papua, the largest land area, takes two.</p>
+      <div id="tilemap-cover"></div>
+      <p class="source"><b>Source:</b> BPS, SUPAS 2025 (BRS No. 51/05/Th. XXIX). Maluku &amp; Papua is the residual after the five named groups — derived. <a href="regions.html">Explore all 38 provinces &rarr;</a></p>
     </div>
   </section>
 </main>
@@ -135,28 +168,21 @@ window.addEventListener('DOMContentLoaded', function () {
   }));
   CH.render('chart-growth', CH.barChart({
     labels: D.years, values: D.series.gdpGrowth.values, decimals: 2, highlightIndex: 5,
+    ymin: -2.5, ymax: 6, ticks: [-2, 0, 2, 4, 6], tickDecimals: 0,
     aria: 'Bar chart: real GDP growth 2015 to 2024, with a contraction of 2.07 percent in 2020',
     annotate: [{ index: 5, text: 'COVID-19: −2.07%' }]
   }));
-  function spark(id, values, dec, ymin, ymax) {
-    var W = 220, H = 56, L = 2, R = 2, T = 6, B = 4;
-    var lo = ymin, hi = ymax;
-    var pts = values.map(function (v, i) {
-      var x = L + ((W - L - R) * i) / (values.length - 1);
-      var y = T + (H - T - B) * (1 - (v - lo) / (hi - lo));
-      return x.toFixed(1) + ',' + y.toFixed(1);
-    }).join(' ');
-    var last = values[values.length - 1];
-    var lx = W - R, ly = T + (H - T - B) * (1 - (last - lo) / (hi - lo));
-    document.getElementById(id).innerHTML =
-      '<svg viewBox="0 0 ' + W + ' ' + H + '" aria-hidden="true">' +
-      '<polyline points="' + pts + '" fill="none" stroke="#C8102E" stroke-width="2" stroke-linejoin="round"/>' +
-      '<circle cx="' + lx.toFixed(1) + '" cy="' + ly.toFixed(1) + '" r="3" fill="#C8102E"/></svg>';
-  }
-  spark('mini-growth', D.series.gdpGrowth.values, 2, -2.5, 5.6);
-  spark('mini-inflation', D.series.inflation.values, 2, 0, 7);
-  spark('mini-urban', D.series.urban.values, 1, 52, 60);
-  spark('mini-life', D.series.lifeExpectancy.values, 1, 66, 72);
+  CH.render('tilemap-cover', CH.tileMap({}));
+  CH.render('spark-population', CH.sparkline(D.series.population.values, { ymin: 255, ymax: 290 }));
+  CH.render('spark-gdp', CH.sparkline(D.series.gdpNominal.values, {}));
+  CH.render('spark-gdppc', CH.sparkline(D.series.gdpPerCapita.values, {}));
+  CH.render('spark-life', CH.sparkline(D.series.lifeExpectancy.values, { ymin: 66, ymax: 72 }));
+  CH.render('spark-internet', CH.sparkline(D.series.internet.values, {}));
+  CH.render('spark-inflation', CH.sparkline(D.series.inflation.values, { ymin: 0, ymax: 7 }));
+  CH.render('mini-growth', CH.sparkline(D.series.gdpGrowth.values, { ymin: -2.5, ymax: 5.6, height: 56 }));
+  CH.render('mini-inflation', CH.sparkline(D.series.inflation.values, { ymin: 0, ymax: 7, height: 56 }));
+  CH.render('mini-urban', CH.sparkline(D.series.urban.values, { ymin: 52, ymax: 60, height: 56 }));
+  CH.render('mini-life', CH.sparkline(D.series.lifeExpectancy.values, { ymin: 66, ymax: 72, height: 56 }));
 });
 </script>
 </body>

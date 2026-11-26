@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regions — Indonesia in Numbers</title>
+<meta name="description" content="All 38 provinces of Indonesia: population, Human Development Index, poverty and GRP per capita — searchable, sortable, comparable.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<script src="data.js" defer></script>
+<script src="charts.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">ID</span><span class="brand-name">Indonesia <span>in Numbers</span></span></a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
+      <svg viewBox="0 0 20 20" fill="none" stroke="#111110" stroke-width="2" stroke-linecap="round"><line x1="3" y1="5" x2="17" y2="5"/><line x1="3" y1="10" x2="17" y2="10"/><line x1="3" y1="15" x2="17" y2="15"/></svg>
+    </button>
+    <nav class="nav" id="main-nav" aria-label="Sections">
+      <a href="index.html">Overview</a>
+      <a href="economy.html">Economy</a>
+      <a href="people.html">People &amp; Regions</a>
+      <a href="regions.html" class="active" aria-current="page">Regions</a>
+      <a href="society.html">Society</a>
+      <a href="environment.html">Environment</a>
+      <a href="data.html">Data &amp; Sources</a>
+    </nav>
+    <div class="topbar-right">
+      <span class="pill red"><span class="dot"></span>Latest: 2024</span>
+      <span class="pill hide-phone">Data as of Nov 2026</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="page-head">
+    <p class="eyebrow">Regions · <b>38 Provinces</b></p>
+    <h1>Thirty-eight provinces, one table</h1>
+    <p>Every province, four numbers each: how many people, how developed, how poor, how rich per person. Search it, sort it, filter it by island — or put any two provinces side by side.</p>
+  </section>
+
+  <section class="kpis" aria-label="Regional extremes">
+    <div class="kpi"><p class="k-label">Highest HDI</p><p class="k-value">84.15</p><p class="k-sub">Jakarta — “very high”</p><p class="k-src">BPS (IPM) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Lowest poverty</p><p class="k-value">3.80<small>%</small></p><p class="k-sub">Bali, Sep 2024</p><p class="k-src">BPS, BRS · Sep 2024</p></div>
+    <div class="kpi"><p class="k-label">Richest per person</p><p class="k-value">Rp367.7<small> m</small></p><p class="k-sub">Jakarta, GRP / capita</p><p class="k-src">BPS (Seri 2010) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Largest province</p><p class="k-value">50.76<small> m</small></p><p class="k-sub">West Java</p><p class="k-src">BPS, mid-year estimates · 2025</p></div>
+    <div class="kpi"><p class="k-label">Lowest HDI</p><p class="k-value">54.43</p><p class="k-sub">Highland Papua</p><p class="k-src">BPS (IPM) · 2024</p></div>
+    <div class="kpi"><p class="k-label">Highest poverty</p><p class="k-value">29.66<small>%</small></p><p class="k-sub">Highland Papua, Sep 2024</p><p class="k-src">BPS, BRS · Sep 2024</p></div>
+  </section>
+
+  <section class="section">
+    <div class="card tilemap-card">
+      <h3>One square is two percent of Indonesia</h3>
+      <p class="card-sub">Population by island group, SUPAS 2025. Click an island group to filter the table below.</p>
+      <div id="tilemap-regions"></div>
+      <p class="source"><b>Source:</b> BPS, SUPAS 2025 (BRS No. 51/05/Th. XXIX). Maluku &amp; Papua is the residual after the five named groups — derived.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="grid-2">
+      <div class="card">
+        <h3>The ten largest provinces</h3>
+        <p class="card-sub">Population, millions, mid-2025 estimates. The top three — all on Java — hold 131.08 million people between them.</p>
+        <div class="chart" id="chart-top10"></div>
+        <p class="source"><b>Source:</b> BPS, mid-year estimates 2025.</p>
+      </div>
+      <div class="card">
+        <h3>Rankings</h3>
+        <p class="card-sub">The gaps are wide: 29.72 points of HDI separate Jakarta from Highland Papua, and poverty runs from 3.80% in Bali to 29.66% in Highland Papua.</p>
+        <p class="m-label" style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin:0 0 2px">Highest HDI, 2024</p>
+        <ol class="rank-list" id="rank-hdi"></ol>
+        <p class="m-label" style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin:14px 0 2px">Lowest poverty, Sep 2024</p>
+        <ol class="rank-list" id="rank-poverty"></ol>
+        <p class="source"><b>Sources:</b> BPS (IPM) 2024; BPS, BRS, September 2024.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <h3>Province explorer</h3>
+      <p class="card-sub">All 38 provinces. Click a column heading to sort; type to search; filter by island group.</p>
+      <div class="filter-row">
+        <input type="search" id="explorer-search" placeholder="Search a province — try “Papua” or “Kalimantan”" aria-label="Search provinces">
+        <div class="seg wrap" role="group" aria-label="Filter by island" id="island-buttons">
+          <button type="button" data-island="All" aria-pressed="true">All islands</button>
+          <button type="button" data-island="Sumatra" aria-pressed="false">Sumatra</button>
+          <button type="button" data-island="Java" aria-pressed="false">Java</button>
+          <button type="button" data-island="Kalimantan" aria-pressed="false">Kalimantan</button>
+          <button type="button" data-island="Sulawesi" aria-pressed="false">Sulawesi</button>
+          <button type="button" data-island="Bali &amp; Nusa Tenggara" aria-pressed="false">Bali &amp; NT</button>
+          <button type="button" data-island="Maluku &amp; Papua" aria-pressed="false">Maluku &amp; Papua</button>
+        </div>
+      </div>
+      <p class="result-count" id="explorer-count" aria-live="polite"></p>
+      <div class="table-scroll">
+        <table class="data" id="explorer-table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th class="sortable" data-sort="name" scope="col">Province ↕</th>
+              <th scope="col">Island</th>
+              <th scope="col">Capital</th>
+              <th class="sortable" data-sort="pop" scope="col">Population ↕</th>
+              <th class="sortable" data-sort="hdi" scope="col">HDI 2024 ↕</th>
+              <th class="sortable" data-sort="poverty" scope="col">Poverty % ↕</th>
+              <th class="sortable" data-sort="gdppc" scope="col">GRP / capita ↕</th>
+            </tr>
+          </thead>
+          <tbody id="explorer-body"></tbody>
+        </table>
+      </div>
+      <p class="source"><b>Sources:</b> Population — BPS, mid-year estimates 2025. HDI — BPS (IPM) 2024, revised series. Poverty — BPS, BRS, September 2024. GRP per capita — BPS (Seri 2010) 2024, shown in million rupiah (source unit: thousand rupiah). A province-level SUPAS 2025 population table is not published by BPS, so the explorer uses the mid-year estimates and says so.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <h3>Compare two provinces</h3>
+      <p class="card-sub">Pick any two provinces. The difference column is A minus B.</p>
+      <div class="compare-sel">
+        <div class="calc-field">
+          <label for="compare-a">Province A</label>
+          <select id="compare-a"></select>
+        </div>
+        <div class="calc-field">
+          <label for="compare-b">Province B</label>
+          <select id="compare-b"></select>
+        </div>
+      </div>
+      <div class="table-scroll">
+        <table class="data" id="compare-table">
+          <thead>
+            <tr><th scope="col">Indicator</th><th scope="col" id="compare-head-a">A</th><th scope="col" id="compare-head-b">B</th><th scope="col">Difference (A − B)</th></tr>
+          </thead>
+          <tbody id="compare-body"></tbody>
+        </table>
+      </div>
+      <p class="source"><b>Sources:</b> as in the explorer above. GRP per capita is shown in million rupiah; the difference is in the same unit.</p>
+    </div>
+  </section>
+
+  <div class="note">
+    <b>Methodology.</b> Provincial HDI follows the revised BPS series published in November 2025 (Jakarta 84.15, Highland Papua 54.43); an older series circulating in some tables (Jakarta 83.08) is superseded. Poverty is the September 2024 rate from the BPS poverty BRS (national 8.57%). GRP per capita is nominal, 2024, in thousand rupiah. Note that the population-weighted mean of provincial GRP per capita (Rp83.10 million) sits above the national figure (Rp78.62 million) — provincial GRP sums exceed national GDP by design in BPS methodology, so the two are not directly comparable.
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Figures are from the World Bank World Development Indicators, BPS — Statistics Indonesia, UNDP and the CIA World Factbook. Each figure shows its own reference year; years differ by indicator.</p>
+    <p>Indonesia in Numbers is an independent statistics site. It is not affiliated with BPS, the World Bank or UNDP. <a href="data.html">See all data &amp; sources &rarr;</a></p>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('DOMContentLoaded', function () {
+  CH.initMenu();
+  var D = INDATA;
+  var rows = D.provinces.rows;
+
+  function esc(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+  function fmtPop(p) { return (p / 1e6).toFixed(2) + 'm'; }
+  function fmtGrp(g) { return 'Rp' + (g / 1000).toFixed(1) + 'm'; }
+
+  /* Tile map hero — click an island to filter the explorer. */
+  CH.render('tilemap-regions', CH.tileMap({ onGroup: true }));
+  var island = 'All';
+  var islandBtns = document.querySelectorAll('#island-buttons button');
+  function setIsland(name) {
+    island = name;
+    islandBtns.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-island') === name ? 'true' : 'false'); });
+    renderTable();
+  }
+  islandBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () { setIsland(btn.getAttribute('data-island')); });
+  });
+  document.querySelectorAll('#tilemap-regions rect[data-island]').forEach(function (rect) {
+    rect.addEventListener('click', function () {
+      var name = rect.getAttribute('data-island');
+      setIsland(island === name ? 'All' : name);
+    });
+  });
+
+  /* Top 10 by population. */
+  CH.render('chart-top10', CH.hbarChart({
+    rows: rows.slice(0, 10).map(function (r, i) { return { name: r.name, value: r.pop / 1e6, highlight: i === 0 }; }),
+    decimals: 2, unitSuffix: 'm', labelWidth: 150,
+    aria: 'Horizontal bars: ten largest provinces — West Java 50.76 million down to Riau 6.81 million'
+  }));
+
+  /* Rankings. */
+  function rankList(el, list, fmtFn) {
+    document.getElementById(el).innerHTML = list.map(function (r, i) {
+      return '<li><span class="rk">' + (i + 1) + '</span><span>' + esc(r.name) + '</span><span class="rv">' + fmtFn(r) + '</span></li>';
+    }).join('');
+  }
+  rankList('rank-hdi', rows.slice().sort(function (a, b) { return b.hdi - a.hdi; }).slice(0, 5),
+    function (r) { return r.hdi.toFixed(2); });
+  rankList('rank-poverty', rows.slice().sort(function (a, b) { return a.poverty - b.poverty; }).slice(0, 5),
+    function (r) { return r.poverty.toFixed(2) + '%'; });
+
+  /* Explorer table. */
+  var searchInput = document.getElementById('explorer-search');
+  var body = document.getElementById('explorer-body');
+  var count = document.getElementById('explorer-count');
+  var sortKey = 'pop', sortDir = -1;
+  function renderTable() {
+    var q = searchInput.value.trim().toLowerCase();
+    var list = rows.filter(function (r) {
+      if (island !== 'All' && r.island !== island) return false;
+      if (!q) return true;
+      return (r.name + ' ' + r.island + ' ' + r.capital).toLowerCase().indexOf(q) !== -1;
+    });
+    list.sort(function (a, b) {
+      var av = a[sortKey], bv = b[sortKey];
+      if (av < bv) return -sortDir;
+      if (av > bv) return sortDir;
+      return 0;
+    });
+    var html = '';
+    list.forEach(function (r, i) {
+      html += '<tr><td class="num">' + (i + 1) + '</td><td><b>' + esc(r.name) + '</b></td><td>' + esc(r.island) + '</td><td>' + esc(r.capital) +
+        '</td><td class="num">' + fmtPop(r.pop) + '</td><td class="num">' + r.hdi.toFixed(2) +
+        '</td><td class="num">' + r.poverty.toFixed(2) + '%</td><td class="num">' + fmtGrp(r.gdppc) + '</td></tr>';
+    });
+    body.innerHTML = html;
+    count.textContent = list.length + ' of ' + rows.length + ' provinces' +
+      (island !== 'All' ? ' · island: ' + island : '') + (q ? ' · matching “' + searchInput.value.trim() + '”' : '');
+  }
+  searchInput.addEventListener('input', renderTable);
+  var sortHeads = document.querySelectorAll('#explorer-table th.sortable');
+  function paintHeads() {
+    sortHeads.forEach(function (h) {
+      var base = h.textContent.replace(/ [↑↓↕]/, '');
+      h.textContent = base + (h.getAttribute('data-sort') === sortKey ? (sortDir === 1 ? ' ↑' : ' ↓') : ' ↕');
+    });
+  }
+  sortHeads.forEach(function (th) {
+    th.addEventListener('click', function () {
+      var key = th.getAttribute('data-sort');
+      if (sortKey === key) { sortDir = -sortDir; } else { sortKey = key; sortDir = (key === 'name') ? 1 : -1; }
+      paintHeads();
+      renderTable();
+    });
+  });
+  paintHeads();
+  renderTable();
+
+  /* Compare two provinces. */
+  var selA = document.getElementById('compare-a');
+  var selB = document.getElementById('compare-b');
+  rows.forEach(function (r) {
+    var o1 = document.createElement('option'); o1.value = r.name; o1.textContent = r.name; selA.appendChild(o1);
+    var o2 = document.createElement('option'); o2.value = r.name; o2.textContent = r.name; selB.appendChild(o2);
+  });
+  selA.value = 'West Java';
+  selB.value = 'East Java';
+  function byName(n) { return rows.filter(function (r) { return r.name === n; })[0]; }
+  function renderCompare() {
+    var a = byName(selA.value), b = byName(selB.value);
+    document.getElementById('compare-head-a').textContent = a.name;
+    document.getElementById('compare-head-b').textContent = b.name;
+    function diff(x, y, dec, suffix) {
+      var d = x - y;
+      return (d > 0 ? '+' : '') + d.toFixed(dec) + (suffix || '');
+    }
+    var html = '';
+    html += '<tr><th>Population</th><td class="num">' + fmtPop(a.pop) + '</td><td class="num">' + fmtPop(b.pop) +
+      '</td><td class="num">' + diff(a.pop / 1e6, b.pop / 1e6, 2, 'm') + '</td></tr>';
+    html += '<tr><th>Human Development Index, 2024</th><td class="num">' + a.hdi.toFixed(2) + '</td><td class="num">' + b.hdi.toFixed(2) +
+      '</td><td class="num">' + diff(a.hdi, b.hdi, 2, '') + '</td></tr>';
+    html += '<tr><th>Poverty rate, Sep 2024</th><td class="num">' + a.poverty.toFixed(2) + '%</td><td class="num">' + b.poverty.toFixed(2) + '%' +
+      '</td><td class="num">' + diff(a.poverty, b.poverty, 2, ' pp') + '</td></tr>';
+    html += '<tr><th>GRP per capita, 2024</th><td class="num">' + fmtGrp(a.gdppc) + '</td><td class="num">' + fmtGrp(b.gdppc) +
+      '</td><td class="num">' + diff(a.gdppc / 1000, b.gdppc / 1000, 1, 'm') + '</td></tr>';
+    document.getElementById('compare-body').innerHTML = html;
+  }
+  selA.addEventListener('change', renderCompare);
+  selB.addEventListener('change', renderCompare);
+  renderCompare();
+});
+</script>
+</body>
+</html>
